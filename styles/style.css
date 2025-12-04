@@ -142,18 +142,23 @@ img {
     max-width: 100%;
 }
 
+/* form */
+
 form {
     border-radius: 10px;
 }
 
 input[type=text], input[type="email"], input[type="tel"], input[type="number"] {
     width: 100%;
+    margin: 5px;
+    border-radius: 5px;
 }
 
 input[type=submit] {
     background-color: var(--dark-background);
     color: var(--lighttext);
     padding: 10px;
+    margin: 5px;
     border-radius: 10px;
 }
 
