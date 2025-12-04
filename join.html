@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <link rel="stylesheet" href="styles/style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="scripts/openmenu.js"></script>
+      <title>Barbers Federation of Ireland</title>
+  </head>
+
+  <body>
+    <div class="outer-border">
+      <!--Header-->
+      <header>
+        <div class="header">
+          <div class="header-text">
+            Barbers Federation of Ireland
+          </div>
+          <div class="header-logo">
+            <img src="images/TransparentScissors3.png" alt="Barbers Federation of Ireland Logo">
+          </div>
+        </div>
+      </header>
+      <!--Menu-->
+     <nav>
+        <div class="topnav">
+          <div>
+            <a href="join.html" class="active">Join</a>
+          </div>
+          <div id="links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="why.html">Why Join?</a>
+          </div>
+          <a href="javascript:void(0);" class="icon" onclick="openMenu()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+      </nav>
+      <!--Content-->
+      <main>
+        <div class="content">
+          <div class="content-image">
+            <img src="images/barberTools6.png">
+          </div>
+          <div class="content-text">
+            <h1>Register your Interest:</h1>
+            <p>
+              By completing the form below you are agreeing to be added to a register of barbers interested in joining the Barbers Federation of Ireland.
+            </p>
+            <p>
+              Your details will be stored securely.
+              You will be added to a mailing list which will be used to update you about developments with the Barbers Federation of Ireland.
+            </p>
+            <form>
+              
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required=""> <br>     
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email"><br>
+              <label for="phone">Phone</label>
+              <input type="tel" name="phone" id="phone"><br>
+              <label for="experience">Years Experience</label>
+              <input type="number" name="experience" id="experience" min="1" max="40"><br>
+              <input type="submit" value="Submit">
+            </form>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div class="footer">
+          <div class="footer-text">
+            Site Design by <a href="mailto:dstuartkelly@gmail.com">Daniel Stuart-Kelly</a>
+          </div>
+        </div>
+      </footer>
+      </footer>
+    </div>
+  </body>
+</html>

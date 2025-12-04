@@ -1,0 +1,37 @@
+/* Accordion menu for Services Page */
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  border-radius: 10px;
+  background-color: var(--light-background);
+  width: 100%;
+  color: var(--dark-text);
+  cursor: pointer;
+  text-align: left;
+  border: 10px;
+  outline: 10px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.accordion:hover {
+  background-color: var(--lightgreenhilight);
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  border-radius: 10px;
+  padding: 0 10px;
+  display: none;
+  overflow: hidden;
+}
+
+.accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: var(--lighttext);
+  float: right;
+  margin-left: 5px;
+}
+
+.accordion.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
