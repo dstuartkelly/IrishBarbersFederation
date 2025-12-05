@@ -1,8 +1,10 @@
-var acc = document.getElementsByClassName("accordion");
+// https://www.w3schools.com/howto/howto_js_accordion.asp
+// create collection for accordion elements
+var collection = document.getElementsByClassName("accordion");
 var i;
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
+for (i = 0; i < collection.length; i++) {
+  collection[i].addEventListener("click", function() {
     this.classList.toggle("active");
     var panel = this.nextElementSibling;
     if (panel.style.display === "block") {
