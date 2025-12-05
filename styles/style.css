@@ -46,7 +46,7 @@ a:hover {
     background: var(--dark-background);
 }
 
-/* Header Area */
+/* Header */
 .header {
     display: flex;
     align-items: flex-end;
@@ -69,7 +69,6 @@ a:hover {
 }
 
 /* Navigation Menu */
-
 .topnav {
     overflow: hidden;
     background-color: var(--dark-background);
@@ -109,7 +108,7 @@ a:hover {
     color: var(--dark-text);
 }
 
-/* Content*/
+/* Content */
 main {
     display: flex;
     flex: 1;
@@ -142,8 +141,7 @@ img {
     max-width: 100%;
 }
 
-/* form */
-
+/* Form */
 form {
     border-radius: 10px;
 }
@@ -176,7 +174,6 @@ input[type=submit]:hover {
 
 .footer-text {
     text-align: center;
-    
 }
 
 /* Responsive design for smaller screens */
