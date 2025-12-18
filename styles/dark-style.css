@@ -73,6 +73,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
+}
+
+.nav-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .logo-section {
@@ -149,6 +156,7 @@ nav a.active::after {
 }
 
 .theme-toggle {
+    color: var(--dark);
     background: none;
     border: 1px solid currentColor;
     border-radius: 50%;

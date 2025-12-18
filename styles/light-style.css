@@ -89,6 +89,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
+}
+
+.nav-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .logo-section {
@@ -166,6 +173,7 @@ nav a.active::after {
 }
 
 .theme-toggle {
+    color: var(--light-text);
     background: none;
     border: 1px solid currentColor;
     border-radius: 50%;
@@ -499,11 +507,15 @@ input:-webkit-autofill:focus {
         right: -100%;
         width: 250px;
         height: calc(100vh - 80px);
-        background: rgba(26, 26, 26, 0.98);
+        background: rgba(54, 54, 49, 0.98);
         flex-direction: column;
         padding: 2rem;
         transition: right 0.3s ease;
         border-left: 1px solid rgba(240, 155, 64, 0.2);
+    }
+
+    nav a {
+        color: var(--light-text);
     }
 
     nav.active {
