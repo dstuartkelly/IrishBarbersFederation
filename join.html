@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/moderm-style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbers Federation of Ireland</title>
+
+
+</head>
+<body>
+    <!-- Animated background particles -->
+    <div class="particles" id="particles"></div>
+
+    <header>
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="images/TransparentScissors3.png" alt="Barbers Federation Logo" class="logo">
+                <div class="brand-name">Barbers Federation</div>
+            </div>
+            <nav id="nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="why.html">Why Join?</a>
+                <a href="join.html" class="active">Join</a>
+            </nav>
+            <button class="mobile-menu-btn" id="menuBtn">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Register your interest</h1>
+                <p>
+                By completing the form below you are agreeing to be added to a register of barbers interested in joining the Barbers Federation of Ireland.
+                </p>
+                <p>
+                Your details will be stored securely.
+                You will be added to a mailing list which will be used to update you about developments with the Barbers Federation of Ireland.
+                </p>
+                <form id="userForm">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required=""> <br>     
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required=""><br>
+                    <label for="phone">Phone</label>
+                    <input type="tel" name="phone" id="phone"><br>
+                    <label for="experience">Years Experience</label>
+                    <input type="number" name="experience" id="experience" min="1" max="40"><br>
+                    <input type="submit" value="Submit" class="btn btn-primary">
+                </form>
+            </div>
+            <div class="hero-image">
+                <img src="images/barberTools6.png" alt="Professional barber at work">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Site Design by <a href="mailto:dstuartkelly@gmail.com">Daniel Stuart-Kelly</a></p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">© 2025 Barbers Federation of Ireland</p>
+    </footer>
+    <script src="scripts/modern-script.js"></script>
+</body>
