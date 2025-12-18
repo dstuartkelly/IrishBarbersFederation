@@ -407,12 +407,11 @@ input[type=text], input[type="email"], input[type="tel"], input[type="number"] {
 }
 
 input[type=submit] {
-    background-color: var(--dark-background);
-    color: var(--lighttext);
-    padding: 10px;
-    margin: 5px;
-    border-radius: 10px;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    border: none;
 }
+
 
 input[type=submit]:hover {
   background-color: var(--lightorangehilight)
