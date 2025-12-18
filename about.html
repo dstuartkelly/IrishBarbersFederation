@@ -1,80 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <link rel="stylesheet" href="styles/style.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <script src="scripts/openmenu.js"></script>
-      <title>Barbers Federation of Ireland</title>
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/moderm-style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbers Federation of Ireland</title>
 
-  <body>
-    <div class="outer-border">
-      <!--Header-->
-      <header>
-        <div class="header">
-          <div class="header-text">
-            Barbers Federation of Ireland
-          </div>
-          <div class="header-logo">
-            <img src="images/TransparentScissors3.png" alt="Barbers Federation of Ireland Logo">
-          </div>
-        </div>
-      </header>
-      <!--Menu-->
-     <nav>
-        <div class="topnav">
-          <a href="about.html" class="active">About</a>
-          <div id="links">
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="why.html">Why Join?</a>
-            <a href="join.html">Join</a>
-          </div>
-          <a href="javascript:void(0);" class="icon" onclick="openMenu()">
-            <i class="fa fa-bars"></i>
-          </a>
-        </div>
-      </nav>
-      <!--Content-->
-      <main>
-        <div class="content">
-          <div class="content-text">
-            <h1>The Barbers Federation of Ireland.</h1>
-            <p>
-              Founded in 2025, the Barbers Federation of Ireland is a non profit organisation dedicated to supporting members in the barbering industry by providing:
-              <ul>
-                <li>A central register of all Barbers working in Ireland.</li>
-                <li>Training and Certification.</li>
-                <li>Recognition of time spent working.</li>
-                <li>Guidance for new barbers.</li>
-                <li>Certification of skills.</li>
-                <li>Support to shops.</li>
-                <li>Representation to local Government.</li>
-              </ul>
-            </p>
-            <p>
-              We are here to provide support, and representation to the members of the Barbers Federation across the Barbering industry.
-            </p>
-            <p>
-              The goal of the Barbers Federation of Ireland is to recognise and protect Barbers skills and training.
-            </p>
 
-          </div>
-          <div class="content-image">
-            <img src="images/barberTools4.png" alt="Image of a barbers clippers on a wooden counter">
-          </div>
+</head>
+<body>
+    <!-- Animated background particles -->
+    <div class="particles" id="particles"></div>
 
+    <header>
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="images/TransparentScissors3.png" alt="Barbers Federation Logo" class="logo">
+                <div class="brand-name">Barbers Federation</div>
+            </div>
+            <nav id="nav">
+                <a href="home.html">Home</a>
+                <a href="about.html" class="active">About</a>
+                <a href="services.html">Services</a>
+                <a href="why.html">Why Join?</a>
+                <a href="join.html">Join</a>
+            </nav>
+            <button class="mobile-menu-btn" id="menuBtn">☰</button>
         </div>
-      </main>
-      <footer>
-        <div class="footer">
-          <div class="footer-text">
-            Site Design by <a href="mailto:dstuartkelly@gmail.com">Daniel Stuart-Kelly</a>
-          </div>
-        </div>
-      </footer>
-    </div>
-  </body>
-</html>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Unite. Elevate. Transform.</h1>
+                <p>Founded in 2025, the Barbers Federation of Ireland is a non profit organisation dedicated to supporting members in the barbering industry by providing:</p>
+                <p>We are here to provide support, and representation to the members of the Barbers Federation across the Barbering industry.</p>
+                <p>The goal of the Barbers Federation of Ireland is to recognise and protect Barbers skills and training.</p>
+
+
+            </div>
+            <div class="hero-image">
+                <img src="images/barberTools4.png" alt="Professional barber at work">
+            </div>
+        </section>
+
+        <section class="features" id="services">
+            <h2 class="section-title">What We Offer</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Central Register</h3>
+                    <p>A comprehensive register of all barbers working in Ireland, providing legitimacy and recognition.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Training & Certification</h3>
+                    <p>Professional development programs with recognized certifications to elevate your skills.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏱️</div>
+                    <h3>Experience Recognition</h3>
+                    <p>Official recognition of time spent working and training in the barbering industry.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧭</div>
+                    <h3>Guidance for New Barbers</h3>
+                    <p>Support and mentorship for those starting their barbering journey.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>Skills Certification</h3>
+                    <p>Verified credentials that showcase your professional capabilities.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏪</div>
+                    <h3>Shop Support</h3>
+                    <p>Resources and assistance for barbershop owners to grow their businesses.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏛️</div>
+                    <h3>Government Representation</h3>
+                    <p>Your voice in discussions with local government about industry standards.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Site Design by <a href="mailto:dstuartkelly@gmail.com">Daniel Stuart-Kelly</a></p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">© 2025 Barbers Federation of Ireland</p>
+    </footer>
+    <script src="scripts/modern-script.js"></script>
+</body>
