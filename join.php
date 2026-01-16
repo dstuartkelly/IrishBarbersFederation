@@ -1,3 +1,4 @@
+<?php require_once 'generate-csrf-token.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,16 +73,26 @@
                 Your details will be stored securely.
                 You will be added to a mailing list which will be used to update you about developments with the Barbers Federation of Ireland.
                 </p>
-                <form id="userForm">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required=""> <br>     
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" required=""><br>
+                
+                <!-- Success/Error Messages -->
+                <div id="formMessage" style="display: none; padding: 1rem; margin: 1rem 0; border-radius: 8px;"></div>
+                
+                <form id="userForm" method="POST">
+                    <?php echo csrf_field(); ?>
+                    
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required maxlength="255"> <br>     
+                    
+                    <label for="email">Email *</label>
+                    <input type="email" name="email" id="email" required maxlength="255"><br>
+                    
                     <label for="phone">Phone</label>
-                    <input type="tel" name="phone" id="phone"><br>
+                    <input type="tel" name="phone" id="phone" maxlength="50"><br>
+                    
                     <label for="experience">Years Experience</label>
-                    <input type="number" name="experience" id="experience" min="1" max="40"><br>
-                    <button type="submit" class="btn btn-primary">
+                    <input type="number" name="experience" id="experience" min="0" max="100"><br>
+                    
+                    <button type="submit" class="btn btn-primary" id="submitBtn">
                         <span>Submit</span>
                     </button>
                 </form>
@@ -97,4 +108,6 @@
         <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">&copy; 2025 Barbers Federation of Ireland</p>
     </footer>
     <script src="scripts/modern-script.js"></script>
+    <script src="scripts/form-handler.js"></script>
 </body>
+</html>
