@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
             formMessage.style.background = 'linear-gradient(135deg, rgba(171, 50, 20, 0.2), rgba(240, 155, 64, 0.2))';
             formMessage.style.border = '1px solid #ab3214';
             formMessage.style.color = '#ab3214';
-            formMessage.textContent = 'Connection error. Please check your internet and try again.';
+            formMessage.textContent = 'Backend Database connection error.';
             
             console.error('Form submission error:', error);
         } finally {
