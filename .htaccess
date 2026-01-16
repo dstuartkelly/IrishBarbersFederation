@@ -14,9 +14,9 @@
 </Files>
 
 # Enable PHP error logging (disable display in production)
-php_flag display_errors Off
-php_flag log_errors On
-php_value error_log /path/to/your/error_log
+# php_flag display_errors Off
+# php_flag log_errors On
+# php_value error_log /path/to/your/error_log
 
 # Prevent directory browsing
 Options -Indexes
