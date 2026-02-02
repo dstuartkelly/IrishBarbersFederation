@@ -13,6 +13,13 @@
     Deny from all
 </Files>
 
+# Disallow access to og-image generator
+<Files "og-image.html">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+
 # Enable PHP error logging (disable display in production)
 # php_flag display_errors Off
 # php_flag log_errors On
