@@ -77,7 +77,7 @@
                 <!-- Success/Error Messages -->
                 <div id="formMessage" style="display: none; padding: 1rem; margin: 1rem 0; border-radius: 8px;"></div>
                 
-                <form id="userForm" method="POST">
+                <form id="userForm" action="submit-form.php" method="POST">
                     <?php echo csrf_field(); ?>
                     
                     <label for="name">Name *</label>
