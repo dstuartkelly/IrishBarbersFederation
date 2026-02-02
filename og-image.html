@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OG Image Generator - Barbers Federation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        button {
+            background: linear-gradient(135deg, #f09b40, #ab3214);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        #canvas {
+            border: 2px solid #f09b40;
+            border-radius: 8px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .info {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        select {
+            padding: 8px 12px;
+            border-radius: 5px;
+            border: 1px solid #f09b40;
+            background: #2a2a2a;
+            color: white;
+            font-size: 14px;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>OG Image Generator - Barbers Federation of Ireland</h1>
+    
+    <div class="controls">
+        <label>
+            Background:
+            <select id="bgStyle">
+                <option value="light">Light (Tan)</option>
+                <option value="dark" selected>Dark (Professional)</option>
+                <option value="gradient">Gradient (Orange)</option>
+            </select>
+        </label>
+        <button onclick="generateImage()">Regenerate</button>
+        <button onclick="downloadImage()">Download PNG</button>
+    </div>
+
+    <canvas id="canvas" width="1200" height="630"></canvas>
+
+    <div class="info">
+        <strong>Recommended Size:</strong> 1200×630px (Facebook, Twitter, LinkedIn)<br>
+        Save as: <code>og-image.png</code> and upload to your <code>/images/</code> folder
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const logoImg = new Image();
+        
+        logoImg.crossOrigin = 'anonymous';
+        logoImg.src = 'https://barbersfederationofireland.com/images/TransparentScissors3.png';
+        
+        logoImg.onload = () => {
+            generateImage();
+        };
+
+        logoImg.onerror = () => {
+            // Fallback: draw without logo
+            console.log('Could not load logo, drawing without it');
+            generateImage();
+        };
+
+        function generateImage() {
+            const bgStyle = document.getElementById('bgStyle').value;
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw background
+            if (bgStyle === 'light') {
+                ctx.fillStyle = '#a39986';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+            } else if (bgStyle === 'dark') {
+                ctx.fillStyle = '#363631';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+            } else if (bgStyle === 'gradient') {
+                const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+                gradient.addColorStop(0, '#f09b40');
+                gradient.addColorStop(1, '#ab3214');
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+            }
+            
+            // Draw logo if loaded
+            if (logoImg.complete && logoImg.naturalWidth > 0) {
+                const logoSize = 200;
+                const logoX = (canvas.width - logoSize) / 2;
+                const logoY = 150;
+                ctx.drawImage(logoImg, logoX, logoY, logoSize, logoSize);
+            }
+            
+            // Draw text
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            // Main title
+            ctx.fillStyle = bgStyle === 'light' ? '#020000' : '#ece8e3';
+            ctx.font = 'bold 64px -apple-system, BlinkMacSystemFont, sans-serif';
+            ctx.fillText('Barbers Federation', canvas.width / 2, 400);
+            
+            ctx.font = 'bold 56px -apple-system, BlinkMacSystemFont, sans-serif';
+            ctx.fillText('of Ireland', canvas.width / 2, 470);
+            
+            // Tagline
+            ctx.fillStyle = '#f09b40';
+            ctx.font = '32px -apple-system, BlinkMacSystemFont, sans-serif';
+            ctx.fillText('Unite. Elevate. Transform.', canvas.width / 2, 550);
+        }
+
+        function downloadImage() {
+            const link = document.createElement('a');
+            link.download = 'og-image.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+    </script>
+</body>
+</html>
