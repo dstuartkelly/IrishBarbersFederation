@@ -20,7 +20,7 @@
     <meta property="og:url" content="https://barbersfederationofireland.com/join.php">
     <meta property="og:title" content="Join Us | Barbers Federation of Ireland">
     <meta property="og:description" content="Register your interest to join the Barbers Federation of Ireland. Get professional recognition, training, and certification.">
-    <meta property="og:image" content="https://barbersfederationofireland.com/images/og-image.jpg">
+    <meta property="og:image" content="https://barbersfederationofireland.com/images/og-image.png">
     <meta property="og:locale" content="en_IE">
     
     <!-- Twitter -->
@@ -28,7 +28,7 @@
     <meta property="twitter:url" content="https://barbersfederationofireland.com/join.php">
     <meta property="twitter:title" content="Join Us | Barbers Federation of Ireland">
     <meta property="twitter:description" content="Register your interest to join the Barbers Federation of Ireland. Get professional recognition, training, and certification.">
-    <meta property="twitter:image" content="https://barbersfederationofireland.com/images/og-image.jpg">
+    <meta property="twitter:image" content="https://barbersfederationofireland.com/images/og-image.png">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
