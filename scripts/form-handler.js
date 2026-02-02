@@ -30,10 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 body: formData
             });
 
-            // Debug: log raw response
-            const responseText = await response.text();
-            console.log('Raw response:', responseText);
-
             // Try to parse as JSON
             let result;
             try {
