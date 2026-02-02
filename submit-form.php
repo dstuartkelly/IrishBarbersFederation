@@ -66,7 +66,6 @@ if (!empty($errors)) {
 }
 
 // Check for duplicate email (optional - uncomment if you want to prevent duplicates)
-/*
 try {
     $pdo = getDBConnection();
     $stmt = $pdo->prepare("SELECT id FROM registrations WHERE email = ? LIMIT 1");
@@ -80,7 +79,6 @@ try {
 } catch (PDOException $e) {
     error_log("Duplicate check error: " . $e->getMessage());
 }
-*/
 
 // Insert into database
 try {
