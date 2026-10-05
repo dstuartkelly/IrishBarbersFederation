@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OG Image Generator - Irish Barbering Federation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 20px;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #1a1a1a;
-            color: #fff;
+            background: #10251d;
+            color: #f2f0e8;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -30,8 +33,8 @@
         }
 
         button {
-            background: linear-gradient(135deg, #f09b40, #ab3214);
-            color: white;
+            background: #d1f36a;
+            color: #10251d;
             border: none;
             padding: 12px 24px;
             border-radius: 8px;
@@ -45,7 +48,7 @@
         }
 
         #canvas {
-            border: 2px solid #f09b40;
+            border: 2px solid #d1f36a;
             border-radius: 8px;
             max-width: 100%;
             height: auto;
@@ -57,35 +60,12 @@
             border-radius: 8px;
             text-align: center;
         }
-
-        select {
-            padding: 8px 12px;
-            border-radius: 5px;
-            border: 1px solid #f09b40;
-            background: #2a2a2a;
-            color: white;
-            font-size: 14px;
-        }
-
-        label {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
     </style>
 </head>
 <body>
     <h1>OG Image Generator - Irish Barbering Federation</h1>
-    
+
     <div class="controls">
-        <label>
-            Background:
-            <select id="bgStyle">
-                <option value="light">Light (Tan)</option>
-                <option value="dark" selected>Dark (Professional)</option>
-                <option value="gradient">Gradient (Orange)</option>
-            </select>
-        </label>
         <button onclick="generateImage()">Regenerate</button>
         <button onclick="downloadImage()">Download PNG</button>
     </div>
@@ -93,79 +73,89 @@
     <canvas id="canvas" width="1200" height="630"></canvas>
 
     <div class="info">
-        <strong>Recommended Size:</strong> 1200×630px (Facebook, Twitter, LinkedIn)<br>
+        <strong>Recommended Size:</strong> 1200×630px (Facebook, Twitter, LinkedIn, WhatsApp)<br>
         Save as: <code>og-image.png</code> and upload to your <code>/images/</code> folder
     </div>
 
     <script>
+        // Colours match :root in styles/style.css
+        const INK = '#10251d';
+        const GREEN = '#183a2d';
+        const CREAM = '#f2f0e8';
+        const LIME = '#d1f36a';
+        const MUTED = '#9ca99f';
+        const DISPLAY = "'Manrope', -apple-system, BlinkMacSystemFont, sans-serif";
+
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
         const logoImg = new Image();
-        
-        logoImg.src = 'images/TransparentScissors3.png';
-        
-        logoImg.onload = () => {
-            generateImage();
-        };
 
-        logoImg.onerror = () => {
-            // Fallback: draw without logo
-            console.log('Could not load logo, drawing without it');
-            generateImage();
+        logoImg.onload = logoImg.onerror = () => {
+            // Wait for Manrope so the canvas doesn't fall back to a system font
+            Promise.all([
+                document.fonts.load('800 64px Manrope'),
+                document.fonts.load('700 28px Manrope')
+            ]).catch(() => {}).then(generateImage);
         };
+        logoImg.src = 'images/TransparentScissors3.png';
 
         function generateImage() {
-            const bgStyle = document.getElementById('bgStyle').value;
-            
-            // Clear canvas
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            // Draw background
-            if (bgStyle === 'light') {
-                ctx.fillStyle = '#a39986';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-            } else if (bgStyle === 'dark') {
-                ctx.fillStyle = '#363631';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-            } else if (bgStyle === 'gradient') {
-                const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-                gradient.addColorStop(0, '#f09b40');
-                gradient.addColorStop(1, '#ab3214');
-                ctx.fillStyle = gradient;
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-            }
-            
-            // Draw logo if loaded
+            const w = canvas.width;
+            const h = canvas.height;
+
+            // Background: IBF dark green with a soft lighter glow
+            ctx.fillStyle = INK;
+            ctx.fillRect(0, 0, w, h);
+            const glow = ctx.createRadialGradient(w / 2, 220, 40, w / 2, 220, 520);
+            glow.addColorStop(0, GREEN);
+            glow.addColorStop(1, INK);
+            ctx.fillStyle = glow;
+            ctx.fillRect(0, 0, w, h);
+
+            // Logo, keeping its aspect ratio
             if (logoImg.complete && logoImg.naturalWidth > 0) {
-                const logoSize = 200;
-                const logoX = (canvas.width - logoSize) / 2;
-                const logoY = 150;
-                ctx.drawImage(logoImg, logoX, logoY, logoSize, logoSize);
+                const logoH = 230;
+                const logoW = logoH * logoImg.naturalWidth / logoImg.naturalHeight;
+                ctx.drawImage(logoImg, (w - logoW) / 2, 36, logoW, logoH);
             }
-            
-            // Draw text
+
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
-            
+
             // Main title
-            ctx.fillStyle = bgStyle === 'light' ? '#020000' : '#ece8e3';
-            ctx.font = 'bold 64px -apple-system, BlinkMacSystemFont, sans-serif';
-            ctx.fillText('Irish Barbering', canvas.width / 2, 400);
-            
-            ctx.font = 'bold 56px -apple-system, BlinkMacSystemFont, sans-serif';
-            ctx.fillText('Federation', canvas.width / 2, 470);
-            
+            ctx.fillStyle = CREAM;
+            ctx.font = '800 64px ' + DISPLAY;
+            ctx.fillText('Irish Barbering', w / 2, 340);
+            ctx.fillText('Federation', w / 2, 410);
+
             // Tagline
-            ctx.fillStyle = '#f09b40';
-            ctx.font = '32px -apple-system, BlinkMacSystemFont, sans-serif';
-            ctx.fillText('2,000 barbers. One voice.', canvas.width / 2, 550);
+            ctx.fillStyle = LIME;
+            ctx.font = '700 34px ' + DISPLAY;
+            ctx.fillText('2,000 barbers. One voice.', w / 2, 495);
+
+            // Campaign label
+            ctx.fillStyle = MUTED;
+            ctx.font = '700 18px ' + DISPLAY;
+            if ('letterSpacing' in ctx) ctx.letterSpacing = '4px';
+            ctx.fillText('IBF 2000 · NATIONAL MEMBERSHIP CAMPAIGN', w / 2, 570);
+            if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
         }
 
         function downloadImage() {
-            const link = document.createElement('a');
-            link.download = 'og-image.png';
-            link.href = canvas.toDataURL('image/png');
-            link.click();
+            try {
+                canvas.toBlob(blob => {
+                    const link = document.createElement('a');
+                    link.download = 'og-image.png';
+                    link.href = URL.createObjectURL(blob);
+                    document.body.appendChild(link);
+                    link.click();
+                    link.remove();
+                    setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+                }, 'image/png');
+            } catch (err) {
+                // Tainted canvas (e.g. opened via file://): export is blocked
+                alert('Could not export the canvas: ' + err.message + '\nServe the page with "php -S localhost:8000" instead of opening the file directly.');
+            }
         }
     </script>
 </body>
