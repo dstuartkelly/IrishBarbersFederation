@@ -45,3 +45,8 @@ Header set X-Content-Type-Options "nosniff"
 # Redirect join.html to join.php
 RewriteEngine On
 RewriteRule ^join\.html$ join.php [L,R=301]
+
+# Old pages were merged into the single-page index (NE keeps the # unescaped)
+RewriteRule ^about\.html$ /#about [NE,L,R=301]
+RewriteRule ^services\.html$ /#work [NE,L,R=301]
+RewriteRule ^why\.html$ /#membership [NE,L,R=301]

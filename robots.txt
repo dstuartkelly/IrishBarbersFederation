@@ -1,4 +1,4 @@
-# robots.txt for Barbers Federation of Ireland
+# robots.txt for Irish Barbering Federation
 
 User-agent: *
 Allow: /

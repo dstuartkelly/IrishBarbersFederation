@@ -1,48 +1,53 @@
 <?php require_once 'generate-csrf-token.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <meta name="theme-color" content="#10251d">
+
     <!-- Primary Meta Tags -->
-    <title>Join Us | Barbers Federation of Ireland</title>
-    <meta name="title" content="Join Us | Barbers Federation of Ireland">
-    <meta name="description" content="Register your interest to join the Barbers Federation of Ireland. Get professional recognition, training, certification, and join a community of 16,000+ barbers across Ireland.">
-    <meta name="keywords" content="join barbers federation, register barber ireland, barber membership ireland, become licensed barber, barber registration form, barber federation signup">
-    <meta name="author" content="Barbers Federation of Ireland">
+    <title>Register your interest | Irish Barbering Federation</title>
+    <meta name="title" content="Register your interest | Irish Barbering Federation">
+    <meta name="description" content="Register your interest in joining the Irish Barbering Federation and be one of the first 2,000 founding professional members of IBF 2000.">
+    <meta name="keywords" content="join irish barbering federation, IBF 2000, barber membership ireland, register barber ireland, founding professional member">
+    <meta name="author" content="Irish Barbering Federation">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://barbersfederationofireland.com/join.php">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://barbersfederationofireland.com/join.php">
-    <meta property="og:title" content="Join Us | Barbers Federation of Ireland">
-    <meta property="og:description" content="Register your interest to join the Barbers Federation of Ireland. Get professional recognition, training, and certification.">
+    <meta property="og:title" content="Register your interest | Irish Barbering Federation">
+    <meta property="og:description" content="Register your interest and be one of the first 2,000 founding professional members of IBF 2000.">
     <meta property="og:image" content="https://barbersfederationofireland.com/images/og-image.png">
     <meta property="og:locale" content="en_IE">
-    
+    <meta property="og:site_name" content="Irish Barbering Federation">
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://barbersfederationofireland.com/join.php">
-    <meta property="twitter:title" content="Join Us | Barbers Federation of Ireland">
-    <meta property="twitter:description" content="Register your interest to join the Barbers Federation of Ireland. Get professional recognition, training, and certification.">
+    <meta property="twitter:title" content="Register your interest | Irish Barbering Federation">
+    <meta property="twitter:description" content="Register your interest and be one of the first 2,000 founding professional members of IBF 2000.">
     <meta property="twitter:image" content="https://barbersfederationofireland.com/images/og-image.png">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
-    
-    <!-- Stylesheets -->
-    <link id="themeStylesheet" rel="stylesheet" href="styles/light-style.css">
+
+    <!-- Fonts & Stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "Barbers Federation of Ireland",
+        "name": "Irish Barbering Federation",
+        "alternateName": ["IBF", "Barbers Federation of Ireland"],
         "url": "https://barbersfederationofireland.com",
-        "logo": "https://barbersfederationofireland.com/logo.png",
+        "logo": "https://barbersfederationofireland.com/images/logo.png",
         "contactPoint": {
         "@type": "ContactPoint",
         "email": "info@barbersfederationofireland.com",
@@ -50,80 +55,71 @@
         }
     }
     </script>
-
 </head>
 <body>
-    <!-- Animated background particles -->
-    <div class="particles" id="particles"></div>
-
-    <header>
-        <div class="header-content">
-            <div class="logo-section">
-                <a href="index.html"><img src="images/TransparentScissors3.png" alt="Barbers Federation Logo" class="logo"></a>
-                <div class="brand-name">Barbers Federation of Ireland</div>
-            </div>
-            <div class="nav-section">
-                <nav id="nav">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="services.html">Services</a>
-                    <a href="why.html">Why Join?</a>
-                    <a href="join.php" class="active">Join</a>
-                </nav>
-                <button class="mobile-menu-btn" id="menuBtn">☰</button>
-                <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
-                🌙
-                </button>
-            </div>
-        </div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Irish Barbering Federation home">
+            <span class="brand-mark" aria-hidden="true">IBF<span>✳</span></span>
+            <span class="brand-name">IRISH BARBERING<br>FEDERATION</span>
+        </a>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span></button>
+        <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+            <a href="index.html#ibf2000">IBF 2000</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#work">Our work</a>
+            <a href="index.html#community">Community</a>
+            <a href="index.html#updates">Updates</a>
+            <a class="nav-cta" href="join.php" aria-current="page">Register interest <span aria-hidden="true">↗</span></a>
+        </nav>
     </header>
 
-    <main>
-        <section class="hero" id="home">
-            <div class="hero-content">
-                <h1>Register your interest</h1>
-                <p>
-                By completing the form below you are agreeing to be added to a register of barbers interested in joining the Barbers Federation of Ireland.
-                </p>
-                <p>
-                Your details will be stored securely.
-                You will be added to a mailing list which will be used to update you about developments with the Barbers Federation of Ireland.
-                </p>
-                
-                <!-- Success/Error Messages -->
-                <div id="formMessage" style="display: none; padding: 1rem; margin: 1rem 0; border-radius: 8px;"></div>
-                
-                <form id="userForm" action="submit-form.php" method="POST">
+    <main id="main">
+        <section class="section join-section">
+            <div class="section-kicker"><span>IBF 2000 / REGISTER YOUR INTEREST</span><span class="kicker-line"></span></div>
+            <div class="join-grid">
+                <div class="join-copy">
+                    <h2>Be one of<br><em>the first 2,000.</em></h2>
+                    <p class="lead">Add your name to the register of barbers interested in joining the Irish Barbering Federation.</p>
+                    <p>Your details will be stored securely. You will be added to a mailing list which will be used to update you about developments with the Irish Barbering Federation, including when enrolment for IBF 2000 opens.</p>
+                    <div class="member-price"><div><span>PROFESSIONAL MEMBERSHIP</span><strong>€190 <small>/ year</small></strong></div><p>IBF 2000 campaign membership fee</p></div>
+                    <div class="founding-note"><span class="founding-star">✳</span><p><strong>Registering is free.</strong><br>You won’t be asked to pay anything until enrolment opens and member benefits are confirmed.</p></div>
+                </div>
+
+                <form id="userForm" class="join-form" action="submit-form.php" method="POST">
+                    <div id="formMessage" class="form-message" role="status" hidden></div>
                     <?php echo csrf_field(); ?>
-                    
-                    <label for="name">Name *</label>
-                    <input type="text" id="name" name="name" required maxlength="255"> <br>     
-                    
-                    <label for="email">Email *</label>
-                    <input type="email" name="email" id="email" required maxlength="255"><br>
-                    
-                    <label for="phone">Phone</label>
-                    <input type="tel" name="phone" id="phone" maxlength="50"><br>
-                    
-                    <label for="experience">Years Experience</label>
-                    <input type="number" name="experience" id="experience" min="0" max="100"><br>
-                    
-                    <button type="submit" class="btn btn-primary" id="submitBtn">
-                        <span>Submit</span>
-                    </button>
+
+                    <div class="form-field">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required maxlength="255" autocomplete="name">
+                    </div>
+                    <div class="form-field">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required maxlength="255" autocomplete="email">
+                    </div>
+                    <div class="form-field">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" maxlength="50" autocomplete="tel">
+                    </div>
+                    <div class="form-field">
+                        <label for="experience">Years experience</label>
+                        <input type="number" id="experience" name="experience" min="0" max="100">
+                    </div>
+
+                    <button type="submit" class="button button-lime" id="submitBtn">Register your interest <span aria-hidden="true">↗</span></button>
+                    <p class="small-note">By submitting this form you agree to be added to the IBF register of interest and mailing list.</p>
                 </form>
-            </div>
-            <div class="hero-image">
-                <img src="images/barberTools6.png" alt="Professional barber at work">
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>Site Design by <a href="mailto:dstuartkelly@gmail.com">Daniel Stuart-Kelly</a></p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">&copy; 2025 Barbers Federation of Ireland</p>
+    <footer class="site-footer">
+        <a class="brand footer-brand" href="index.html"><span class="brand-mark">IBF<span>✳</span></span><span class="brand-name">IRISH BARBERING<br>FEDERATION</span></a>
+        <span class="footer-motto">A stronger future for barbering in Ireland. · Site design by <a href="mailto:dstuartkelly@gmail.com">Daniel Stuart-Kelly</a></span>
+        <span class="copyright">© <span id="year">2026</span> IRISH BARBERING FEDERATION</span>
     </footer>
-    <script src="scripts/modern-script.js"></script>
+    <script src="scripts/site.js" defer></script>
     <script src="scripts/form-handler.js"></script>
 </body>
 </html>

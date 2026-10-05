@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OG Image Generator - Barbers Federation</title>
+    <title>OG Image Generator - Irish Barbering Federation</title>
     <style>
         body {
             margin: 0;
@@ -75,7 +75,7 @@
     </style>
 </head>
 <body>
-    <h1>OG Image Generator - Barbers Federation of Ireland</h1>
+    <h1>OG Image Generator - Irish Barbering Federation</h1>
     
     <div class="controls">
         <label>
@@ -102,7 +102,7 @@
         const ctx = canvas.getContext('2d');
         const logoImg = new Image();
         
-        logoImg.src = 'https://barbersfederationofireland.com/images/TransparentScissors3.png';
+        logoImg.src = 'images/TransparentScissors3.png';
         
         logoImg.onload = () => {
             generateImage();
@@ -150,15 +150,15 @@
             // Main title
             ctx.fillStyle = bgStyle === 'light' ? '#020000' : '#ece8e3';
             ctx.font = 'bold 64px -apple-system, BlinkMacSystemFont, sans-serif';
-            ctx.fillText('Barbers Federation', canvas.width / 2, 400);
+            ctx.fillText('Irish Barbering', canvas.width / 2, 400);
             
             ctx.font = 'bold 56px -apple-system, BlinkMacSystemFont, sans-serif';
-            ctx.fillText('of Ireland', canvas.width / 2, 470);
+            ctx.fillText('Federation', canvas.width / 2, 470);
             
             // Tagline
             ctx.fillStyle = '#f09b40';
             ctx.font = '32px -apple-system, BlinkMacSystemFont, sans-serif';
-            ctx.fillText('Unite. Elevate. Transform.', canvas.width / 2, 550);
+            ctx.fillText('2,000 barbers. One voice.', canvas.width / 2, 550);
         }
 
         function downloadImage() {
