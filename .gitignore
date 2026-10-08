@@ -7,3 +7,7 @@ Irish Barbering Federation _ The future of barbering, together*
 # Internal docs, not for deployment
 CLAUDE.md
 handover.md
+
+# Claude Code local-only files
+.claude/local/
+CLAUDE.local.md
