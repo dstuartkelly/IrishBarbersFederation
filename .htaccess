@@ -42,8 +42,12 @@ Header set X-Content-Type-Options "nosniff"
 # RewriteCond %{HTTPS} off
 # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Redirect join.html to join.php
+# Block internal files and folders in case they are copied to the server
 RewriteEngine On
+RewriteRule ^\.claude(/|$) - [F,L]
+RewriteRule \.md$ - [F,L]
+
+# Redirect join.html to join.php
 RewriteRule ^join\.html$ join.php [L,R=301]
 
 # Old pages were merged into the single-page index (NE keeps the # unescaped)

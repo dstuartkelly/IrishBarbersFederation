@@ -11,3 +11,4 @@ handover.md
 # Claude Code local-only files
 .claude/local/
 CLAUDE.local.md
+.claude/settings.local.json
