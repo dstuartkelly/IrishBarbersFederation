@@ -9,7 +9,7 @@
     <!-- Primary Meta Tags -->
     <title>Register your interest | Irish Barbering Federation</title>
     <meta name="title" content="Register your interest | Irish Barbering Federation">
-    <meta name="description" content="Register your interest in joining the Irish Barbering Federation and be one of the first 2,000 founding professional members of IBF 2000.">
+    <meta name="description" content="2,000 barbers. One voice. Register your interest in IBF 2000 and be one of the first 2,000 founding professional members of the Irish Barbering Federation.">
     <meta name="keywords" content="join irish barbering federation, IBF 2000, barber membership ireland, register barber ireland, founding professional member">
     <meta name="author" content="Irish Barbering Federation">
     <meta name="robots" content="index, follow">
@@ -19,7 +19,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://barbersfederationofireland.com/join.php">
     <meta property="og:title" content="Register your interest | Irish Barbering Federation">
-    <meta property="og:description" content="Register your interest and be one of the first 2,000 founding professional members of IBF 2000.">
+    <meta property="og:description" content="2,000 barbers. One voice. Register your interest and be one of the first 2,000 founding members of IBF 2000.">
     <meta property="og:image" content="https://barbersfederationofireland.com/images/og-image.png">
     <meta property="og:locale" content="en_IE">
     <meta property="og:site_name" content="Irish Barbering Federation">
@@ -28,7 +28,7 @@
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://barbersfederationofireland.com/join.php">
     <meta property="twitter:title" content="Register your interest | Irish Barbering Federation">
-    <meta property="twitter:description" content="Register your interest and be one of the first 2,000 founding professional members of IBF 2000.">
+    <meta property="twitter:description" content="2,000 barbers. One voice. Register your interest and be one of the first 2,000 founding members of IBF 2000.">
     <meta property="twitter:image" content="https://barbersfederationofireland.com/images/og-image.png">
 
     <!-- Favicon -->
@@ -79,11 +79,12 @@
             <div class="section-kicker"><span>IBF 2000 / REGISTER YOUR INTEREST</span><span class="kicker-line"></span></div>
             <div class="join-grid">
                 <div class="join-copy">
-                    <h2>Be one of<br><em>the first 2,000.</em></h2>
-                    <p class="lead">Add your name to the register of barbers interested in joining the Irish Barbering Federation.</p>
-                    <p>Your details will be stored securely. You will be added to a mailing list which will be used to update you about developments with the Irish Barbering Federation, including when enrolment for IBF 2000 opens.</p>
+                    <p class="eyebrow dark-eyebrow">YOUR CRAFT. YOUR INDUSTRY. YOUR VOICE.</p>
+                    <h2>2,000 barbers.<br><em>One voice.</em></h2>
+                    <p class="lead">Be one of the first 2,000 to help organise our industry. Register your interest in IBF 2000 and help build professional recognition, shared standards and a national voice for barbering in Ireland.</p>
+                    <p>Your details will be stored securely and added to our mailing list. We’ll use it to update you on developments at the Irish Barbering Federation, including when enrolment for IBF 2000 opens.</p>
                     <div class="member-price"><div><span>PROFESSIONAL MEMBERSHIP</span><strong>€190 <small>/ year</small></strong></div><p>IBF 2000 campaign membership fee</p></div>
-                    <div class="founding-note"><span class="founding-star">✳</span><p><strong>Registering is free.</strong><br>You won’t be asked to pay anything until enrolment opens and member benefits are confirmed.</p></div>
+                    <div class="founding-note"><span class="founding-star">✳</span><p><strong>Registering is free.</strong><br>You won’t be asked to pay anything until enrolment opens and member benefits are confirmed. Qualifying paid members among the first 2,000 are intended to receive permanent Founding Professional recognition.</p></div>
                 </div>
 
                 <form id="userForm" class="join-form" action="submit-form.php" method="POST">
@@ -108,7 +109,7 @@
                     </div>
 
                     <button type="submit" class="button button-lime" id="submitBtn">Register your interest <span aria-hidden="true">↗</span></button>
-                    <p class="small-note">By submitting this form you agree to be added to the IBF register of interest and mailing list.</p>
+                    <p class="small-note">By registering you agree to be added to the IBF register of interest and mailing list. Eligibility and confirmed member benefits will be published before enrolment opens.</p>
                 </form>
             </div>
         </section>
@@ -116,7 +117,7 @@
 
     <footer class="site-footer">
         <a class="brand footer-brand" href="index.html"><span class="brand-mark">IBF<span>✳</span></span><span class="brand-name">IRISH BARBERING<br>FEDERATION</span></a>
-        <span class="footer-motto">A stronger future for barbering in Ireland. · Site design by <a href="mailto:dstuartkelly@gmail.com">Daniel Stuart-Kelly</a></span>
+        <span class="footer-motto">A stronger future for barbering in Ireland. · <a href="privacy.html">Privacy</a> · Site design by <a href="mailto:dstuartkelly@gmail.com">Daniel Stuart-Kelly</a></span>
         <span class="copyright">© <span id="year">2026</span> IRISH BARBERING FEDERATION</span>
     </footer>
     <script src="scripts/site.js" defer></script>
