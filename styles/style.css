@@ -1651,3 +1651,47 @@ button {
         padding: 24px
     }
 }
+
+.privacy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 9vw;
+    margin-top: 35px;
+    align-items: start
+}
+
+.privacy-body {
+    max-width: 680px
+}
+
+.privacy-body h3 {
+    margin: 34px 0 10px
+}
+
+.privacy-body p,
+.privacy-body li {
+    font-size: 14px;
+    line-height: 1.85;
+    color: #667269
+}
+
+.privacy-body ul {
+    margin: 0 0 14px;
+    padding-left: 20px
+}
+
+.privacy-body a:not(.arrow-link) {
+    text-decoration: underline
+}
+
+.privacy-body .arrow-link {
+    margin-top: 28px
+}
+
+@media(max-width: 680px) {
+    .privacy-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 28px
+    }
+}
