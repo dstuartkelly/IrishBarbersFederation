@@ -111,7 +111,7 @@
                     </div>
 
                     <button type="submit" class="button button-lime" id="submitBtn">Register your interest <span aria-hidden="true">↗</span></button>
-                    <p class="small-note">By registering you agree to be added to the IBF register of interest and mailing list. Eligibility and confirmed member benefits will be published before enrolment opens.</p>
+                    <p class="small-note">By submitting this form you consent to the IBF storing your details and emailing you updates, as described in our <a href="privacy.html">Privacy Notice</a>. You can withdraw your consent at any time. Eligibility and confirmed member benefits will be published before enrolment opens.</p>
                 </form>
             </div>
         </section>
