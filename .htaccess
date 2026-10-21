@@ -47,6 +47,11 @@ RewriteEngine On
 RewriteRule ^\.claude(/|$) - [F,L]
 RewriteRule \.md$ - [F,L]
 
+# TEMPORARY: PHP vulnerabilities CVE-2026-109618 / CVE-2026-109619.
+# Keep PHP from running until the server is patched, then remove these rules and join-paused.html.
+RewriteRule ^(join|submit-form)\.php$ /join-paused.html [R=302,L]
+RewriteRule \.php$ - [F,L]
+
 # Redirect join.html to join.php
 RewriteRule ^join\.html$ join.php [L,R=301]
 
