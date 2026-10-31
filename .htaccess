@@ -37,20 +37,16 @@ Header set X-XSS-Protection "1; mode=block"
 # Prevent MIME type sniffing
 Header set X-Content-Type-Options "nosniff"
 
-# Enable HTTPS (uncomment when SSL is active)
-# RewriteEngine On
-# RewriteCond %{HTTPS} off
-# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Redirect HTTP to HTTPS (also honours X-Forwarded-Proto in case a proxy terminates SSL)
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Block internal files and folders in case they are copied to the server
 RewriteEngine On
 RewriteRule ^\.claude(/|$) - [F,L]
 RewriteRule \.md$ - [F,L]
-
-# TEMPORARY: PHP vulnerabilities CVE-2026-109618 / CVE-2026-109619.
-# Keep PHP from running until the server is patched, then remove these rules and join-paused.html.
-RewriteRule ^(join|submit-form)\.php$ /join-paused.html [R=302,L]
-RewriteRule \.php$ - [F,L]
 
 # Redirect join.html to join.php
 RewriteRule ^join\.html$ join.php [L,R=301]
