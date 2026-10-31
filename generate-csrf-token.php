@@ -4,6 +4,11 @@
  * Include this at the top of join.php
  */
 
+session_set_cookie_params([
+    'secure' => true,
+    'httponly' => true,
+    'samesite' => 'Lax',
+]);
 session_start();
 
 // Generate CSRF token if it doesn't exist

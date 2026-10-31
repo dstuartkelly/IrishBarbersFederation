@@ -5,6 +5,11 @@
  */
 
 // Start session for CSRF protection
+session_set_cookie_params([
+    'secure' => true,
+    'httponly' => true,
+    'samesite' => 'Lax',
+]);
 session_start();
 
 // Include database configuration
