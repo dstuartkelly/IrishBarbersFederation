@@ -74,15 +74,17 @@ if (!empty($errors)) {
     exit;
 }
 
-// Check for duplicate email (optional - uncomment if you want to prevent duplicates)
+// Check for duplicate email. Respond as if it succeeded so the response doesn't reveal who is registered.
 try {
     $pdo = getDBConnection();
     $stmt = $pdo->prepare("SELECT id FROM registrations WHERE email = ? LIMIT 1");
     $stmt->execute([$email]);
-    
+
     if ($stmt->fetch()) {
-        http_response_code(409);
-        echo json_encode(['success' => false, 'message' => 'This email is already registered']);
+        echo json_encode([
+            'success' => true,
+            'message' => 'Registration successful! We will contact you soon.'
+        ]);
         exit;
     }
 } catch (PDOException $e) {
