@@ -13,6 +13,12 @@
     Deny from all
 </Files>
 
+# TEMPORARY: real home page, hidden until launch
+<Files "index-full.html">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
 # Disallow access to og-image generator
 <Files "og-image.html">
     Order Allow,Deny
@@ -49,11 +55,12 @@ RewriteRule ^\.claude(/|$) - [F,L]
 RewriteRule \.md$ - [F,L]
 
 # TEMPORARY: LAUNCH-WEEK HOLDING PAGE.
-# Shows coming-soon.html (internal rewrite, URLs and HTTP 200 unchanged) in place of the real pages.
-# coming-soon.html keeps the live <head> (title, description, OG) so search results are unaffected.
-# At launch, delete this block (and coming-soon.html if no longer wanted).
-RewriteRule ^(index\.html|partners\.html|privacy\.html)?$ /coming-soon.html [L]
-RewriteRule ^(join|submit-form)\.php$ /coming-soon.html [L]
+# index.html is the "Launching soon" page (keeps the live <head> so search results are unaffected).
+# The real home page is saved as index-full.html and is blocked below.
+# These rules serve the holding page (HTTP 200, URLs unchanged) for the other public pages.
+# At launch: mv index-full.html index.html, and delete this block and the index-full.html block.
+RewriteRule ^(partners|privacy)\.html$ /index.html [L]
+RewriteRule ^(join|submit-form)\.php$ /index.html [L]
 
 # Redirect join.html to join.php
 RewriteRule ^join\.html$ join.php [L,R=301]
