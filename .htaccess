@@ -48,6 +48,13 @@ RewriteEngine On
 RewriteRule ^\.claude(/|$) - [F,L]
 RewriteRule \.md$ - [F,L]
 
+# TEMPORARY: LAUNCH-WEEK HOLDING PAGE.
+# Shows coming-soon.html (internal rewrite, URLs and HTTP 200 unchanged) in place of the real pages.
+# coming-soon.html keeps the live <head> (title, description, OG) so search results are unaffected.
+# At launch, delete this block (and coming-soon.html if no longer wanted).
+RewriteRule ^(index\.html|partners\.html|privacy\.html)?$ /coming-soon.html [L]
+RewriteRule ^(join|submit-form)\.php$ /coming-soon.html [L]
+
 # Redirect join.html to join.php
 RewriteRule ^join\.html$ join.php [L,R=301]
 
