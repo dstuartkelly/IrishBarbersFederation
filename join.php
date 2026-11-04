@@ -7,27 +7,27 @@
     <meta name="theme-color" content="#10251d">
 
     <!-- Primary Meta Tags -->
-    <title>Register your interest | Irish Barbering Federation</title>
-    <meta name="title" content="Register your interest | Irish Barbering Federation">
-    <meta name="description" content="2,000 barbers. One voice. Register your interest in IBF 2000 and be one of the first 2,000 founding professional members of the Irish Barbering Federation.">
-    <meta name="keywords" content="join irish barbering federation, IBF 2000, barber membership ireland, register barber ireland, founding professional member">
-    <meta name="author" content="Irish Barbering Federation">
+    <title>Register your interest | Irish Barbers Federation</title>
+    <meta name="title" content="Register your interest | Irish Barbers Federation">
+    <meta name="description" content="2,000 barbers. One voice. Register your interest in IBF 2000 and be one of the first 2,000 founding professional members of the Irish Barbers Federation.">
+    <meta name="keywords" content="join irish barbers federation, IBF 2000, barber membership ireland, register barber ireland, founding professional member">
+    <meta name="author" content="Irish Barbers Federation">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://barbersfederationofireland.com/join.php">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://barbersfederationofireland.com/join.php">
-    <meta property="og:title" content="Register your interest | Irish Barbering Federation">
+    <meta property="og:title" content="Register your interest | Irish Barbers Federation">
     <meta property="og:description" content="2,000 barbers. One voice. Register your interest and be one of the first 2,000 founding members of IBF 2000.">
     <meta property="og:image" content="https://barbersfederationofireland.com/images/og-image.png">
     <meta property="og:locale" content="en_IE">
-    <meta property="og:site_name" content="Irish Barbering Federation">
+    <meta property="og:site_name" content="Irish Barbers Federation">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://barbersfederationofireland.com/join.php">
-    <meta property="twitter:title" content="Register your interest | Irish Barbering Federation">
+    <meta property="twitter:title" content="Register your interest | Irish Barbers Federation">
     <meta property="twitter:description" content="2,000 barbers. One voice. Register your interest and be one of the first 2,000 founding members of IBF 2000.">
     <meta property="twitter:image" content="https://barbersfederationofireland.com/images/og-image.png">
 
@@ -44,7 +44,7 @@
     {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "Irish Barbering Federation",
+        "name": "Irish Barbers Federation",
         "alternateName": ["IBF", "Barbers Federation of Ireland"],
         "url": "https://barbersfederationofireland.com",
         "logo": "https://barbersfederationofireland.com/images/logo.png",
@@ -59,9 +59,9 @@
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
-        <a class="brand" href="index.html" aria-label="Irish Barbering Federation home">
+        <a class="brand" href="index.html" aria-label="Irish Barbers Federation home">
             <span class="brand-mark" aria-hidden="true">IBF<span>✳</span></span>
-            <span class="brand-name">IRISH BARBERING<br>FEDERATION</span>
+            <span class="brand-name">IRISH BARBERS<br>FEDERATION</span>
         </a>
         <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span></button>
         <nav id="site-nav" class="site-nav" aria-label="Main navigation">
@@ -84,7 +84,7 @@
                     <h2>2,000 barbers.<br><em>One voice.</em></h2>
                     <p class="lead">Be one of the first 2,000 to help organise our industry. Register your interest in IBF 2000 and help build professional recognition, shared standards and a national voice for barbering in Ireland.</p>
                     <p>Registering your interest does not reserve a founding place.</p>
-                    <p>Your details will be stored securely and added to our mailing list. We’ll use it to update you on developments at the Irish Barbering Federation, including when enrolment for IBF 2000 opens.</p>
+                    <p>Your details will be stored securely and added to our mailing list. We’ll use it to update you on developments at the Irish Barbers Federation, including when enrolment for IBF 2000 opens.</p>
                     <div class="member-price"><div><span>PROFESSIONAL MEMBERSHIP</span><strong>€190 <small>/ year</small></strong></div><p>IBF 2000 campaign membership fee</p></div>
                     <div class="founding-note"><span class="founding-star">✳</span><p><strong>Registering is free.</strong><br>You won’t be asked to pay anything until enrolment opens and member benefits are confirmed. Qualifying paid members among the first 2,000 are intended to receive permanent Founding Professional recognition.</p></div>
                 </div>
@@ -118,9 +118,9 @@
     </main>
 
     <footer class="site-footer">
-        <a class="brand footer-brand" href="index.html"><span class="brand-mark">IBF<span>✳</span></span><span class="brand-name">IRISH BARBERING<br>FEDERATION</span></a>
+        <a class="brand footer-brand" href="index.html"><span class="brand-mark">IBF<span>✳</span></span><span class="brand-name">IRISH BARBERS<br>FEDERATION</span></a>
         <span class="footer-motto">A stronger future for barbering in Ireland. · <a href="partners.html">Partners</a> · <a href="privacy.html">Privacy</a> · Website maintained by Daniel Stuart-Kelly</span>
-        <span class="copyright">© <span id="year">2026</span> IRISH BARBERING FEDERATION</span>
+        <span class="copyright">© <span id="year">2026</span> IRISH BARBERS FEDERATION</span>
     </footer>
     <script src="scripts/site.js" defer></script>
     <script src="scripts/form-handler.js"></script>

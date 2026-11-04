@@ -1,7 +1,7 @@
 <?php
 /**
  * Form Submission Handler
- * Irish Barbering Federation - Registration Form
+ * Irish Barbers Federation - Registration Form
  */
 
 // Start session for CSRF protection
