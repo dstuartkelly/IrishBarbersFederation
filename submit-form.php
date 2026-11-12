@@ -82,6 +82,10 @@ $experienceRaw = post_string('experience');
 $consentRegister = post_string('consent_register') === '1';
 $consentMarketing = post_string('consent_marketing') === '1';
 
+// Which membership the person is interested in (only these values are accepted)
+const TIER_INTEREST_VALUES = ['standard', 'licence', 'both'];
+$tierInterest = post_string('tier_interest');
+
 $errors = [];
 $controlChars = '/[\x00-\x1F\x7F]/';
 
@@ -107,6 +111,10 @@ if ($phone !== '') {
     } elseif (!preg_match('/^[0-9+().\- ]{6,50}$/', $phone)) {
         $errors[] = 'Invalid phone number';
     }
+}
+
+if (!in_array($tierInterest, TIER_INTEREST_VALUES, true)) {
+    $errors[] = 'Please choose which membership you are interested in';
 }
 
 if (!$consentRegister) {
@@ -157,15 +165,16 @@ try {
     // Insert into database. The UNIQUE index on registrations.email rejects duplicates atomically (error 1062).
     $stmt = $pdo->prepare(
         'INSERT INTO registrations
-            (name, email, phone, experience, ip_address, user_agent, consent_register, consent_marketing, consent_at)
+            (name, email, phone, experience, tier_interest, ip_address, user_agent, consent_register, consent_marketing, consent_at)
          VALUES
-            (:name, :email, :phone, :experience, :ip_address, :user_agent, :consent_register, :consent_marketing, NOW())'
+            (:name, :email, :phone, :experience, :tier_interest, :ip_address, :user_agent, :consent_register, :consent_marketing, NOW())'
     );
     $stmt->execute([
         ':name' => $name,
         ':email' => $email,
         ':phone' => $phone,
         ':experience' => $experience,
+        ':tier_interest' => $tierInterest,
         ':ip_address' => $ipAddress,
         ':user_agent' => $userAgent,
         ':consent_register' => 1,

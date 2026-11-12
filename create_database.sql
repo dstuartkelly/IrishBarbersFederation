@@ -12,6 +12,10 @@
 --   4. In phpMyAdmin, select the new database, open the SQL tab, paste this file and run it.
 --
 -- Safe to run more than once: existing tables are left alone.
+--
+-- Changes for an existing database (run once in phpMyAdmin, before deploying the code that uses them):
+--   2026-11-12  ALTER TABLE registrations
+--                   ADD COLUMN tier_interest ENUM('standard','licence','both') NULL AFTER experience;
 
 SET NAMES utf8mb4;
 
@@ -21,6 +25,7 @@ CREATE TABLE IF NOT EXISTS registrations (
     email             VARCHAR(255)     NOT NULL,              -- stored lower-case by submit-form.php
     phone             VARCHAR(50)      NULL,
     experience        TINYINT UNSIGNED NULL,                  -- years, 0-100; NULL if not given
+    tier_interest     ENUM('standard','licence','both') NULL, -- membership the person is interested in; NULL for rows from before this field existed
     ip_address        VARCHAR(45)      NULL,                  -- used for the per-IP rate limit
     user_agent        VARCHAR(255)     NULL,                  -- browser details, for compatibility research
     consent_register  TINYINT(1)       NOT NULL DEFAULT 0,    -- agreed to be stored on the IBF 2000 register

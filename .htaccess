@@ -11,11 +11,6 @@
     Require all denied
 </Files>
 
-# TEMPORARY: real home page, hidden until launch
-<Files "index-full.html">
-    Require all denied
-</Files>
-
 # Disallow access to og-image generator
 <Files "og-image.html">
     Require all denied
@@ -56,18 +51,9 @@ RewriteRule ^\.claude(/|$) - [F,L]
 RewriteRule \.md$ - [F,L]
 RewriteRule \.sql$ - [F,L]
 
-# TEMPORARY: LAUNCH-WEEK HOLDING PAGE.
-# index.html is the "Launching soon" page (keeps the live <head> so search results are unaffected).
-# The real home page is saved as index-full.html and is blocked below.
-# These rules serve the holding page (HTTP 200, URLs unchanged) for the other public pages.
-# At launch: mv index-full.html index.html, and delete this block and the index-full.html block.
-RewriteRule ^(partners|privacy)\.html$ /index.html [L]
-RewriteRule ^(join|submit-form)\.php$ /index.html [L]
-
 # Redirect join.html to join.php
 RewriteRule ^join\.html$ /join.php [L,R=301]
 
-# Old pages were merged into the single-page index (NE keeps the # unescaped)
-RewriteRule ^about\.html$ /#about [NE,L,R=301]
+# Retired pages were merged into the home page (NE keeps the # unescaped)
 RewriteRule ^services\.html$ /#work [NE,L,R=301]
 RewriteRule ^why\.html$ /#membership [NE,L,R=301]

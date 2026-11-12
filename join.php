@@ -1,4 +1,12 @@
-<?php require_once 'generate-csrf-token.php'; ?>
+<?php
+require_once 'generate-csrf-token.php';
+
+// ?interest=standard|licence|both pre-selects the membership choice. Anything else is ignored.
+$interest = $_GET['interest'] ?? '';
+if (!is_string($interest) || !in_array($interest, ['standard', 'licence', 'both'], true)) {
+    $interest = '';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,12 +73,14 @@
         </a>
         <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span></button>
         <nav id="site-nav" class="site-nav" aria-label="Main navigation">
-            <a href="index.html#ibf2000">IBF 2000</a>
-            <a href="index.html#about">About</a>
-            <a href="index.html#work">Our work</a>
-            <a href="index.html#community">Community</a>
-            <a href="index.html#updates">Updates</a>
-            <a href="partners.html">Partners</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About IBF</a>
+            <a href="membership.html">Membership</a>
+            <a href="ibf-licence.html">IBF Licence</a>
+            <a href="standards.html">Standards &amp; Education</a>
+            <a href="representation.html">Representation</a>
+            <a href="news.html">News</a>
+            <a href="contact.html">Contact</a>
             <a class="nav-cta" href="join.php" aria-current="page">Register interest <span aria-hidden="true">↗</span></a>
         </nav>
     </header>
@@ -85,7 +95,8 @@
                     <p class="lead">Be one of the first 2,000 to help organise our industry. Register your interest in IBF 2000 and help build professional recognition, shared standards and a national voice for barbering in Ireland.</p>
                     <p>Registering your interest does not reserve a founding place.</p>
                     <p>Your details will be stored securely on our register of interest. We’ll contact you once when enrolment for IBF 2000 opens and, if you choose, send you news and updates about the Irish Barbers Federation.</p>
-                    <div class="member-price"><div><span>PROFESSIONAL MEMBERSHIP</span><strong>€190 <small>/ year</small></strong></div><p>IBF 2000 campaign membership fee</p></div>
+                    <p>The IBF Professional Barber Licence is a voluntary credential that is still being developed. Choosing it below registers your interest only: it is not an application, and nothing is paid at this stage. <a href="ibf-licence.html">About the IBF Licence</a>.</p>
+                    <div class="member-price"><div><span>STANDARD MEMBERSHIP</span><strong>€190 <small>/ year</small></strong></div><p>IBF 2000 campaign membership fee. Licensed Professional Membership: fee to be confirmed.</p></div>
                     <div class="founding-note"><span class="founding-star">✳</span><p><strong>Registering is free.</strong><br>You won’t be asked to pay anything until enrolment opens and member benefits are confirmed. Qualifying paid members among the first 2,000 are intended to receive permanent Founding Professional recognition.</p></div>
                 </div>
 
@@ -114,6 +125,22 @@
                         <label for="experience">Years experience</label>
                         <input type="number" id="experience" name="experience" min="0" max="100">
                     </div>
+
+                    <fieldset class="form-choice">
+                        <legend>I’m interested in *</legend>
+                        <div class="form-check">
+                            <input type="radio" id="interest_standard" name="tier_interest" value="standard" required<?php echo $interest === 'standard' ? ' checked' : ''; ?>>
+                            <label for="interest_standard">Standard Membership</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="interest_licence" name="tier_interest" value="licence"<?php echo $interest === 'licence' ? ' checked' : ''; ?>>
+                            <label for="interest_licence">IBF Licensed Professional Membership</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="interest_both" name="tier_interest" value="both"<?php echo $interest === 'both' ? ' checked' : ''; ?>>
+                            <label for="interest_both">Both: tell me about each</label>
+                        </div>
+                    </fieldset>
 
                     <div class="form-check">
                         <input type="checkbox" id="consent_register" name="consent_register" value="1" required>
