@@ -41,7 +41,7 @@ if (
 
 // Sanitize and validate input
 $name = trim($_POST['name'] ?? '');
-$email = trim($_POST['email'] ?? '');
+$email = strtolower(trim($_POST['email'] ?? ''));
 $phone = trim($_POST['phone'] ?? '');
 $experience = isset($_POST['experience']) ? intval($_POST['experience']) : null;
 
@@ -77,27 +77,10 @@ if (!empty($errors)) {
     exit;
 }
 
-// Check for duplicate email. Respond as if it succeeded so the response doesn't reveal who is registered.
+// Insert into database. The UNIQUE index on registrations.email rejects duplicates atomically (error 1062).
 try {
     $pdo = getDBConnection();
-    $stmt = $pdo->prepare("SELECT id FROM registrations WHERE email = ? LIMIT 1");
-    $stmt->execute([$email]);
 
-    if ($stmt->fetch()) {
-        echo json_encode([
-            'success' => true,
-            'message' => 'Registration successful! We will contact you soon.'
-        ]);
-        exit;
-    }
-} catch (PDOException $e) {
-    error_log("Duplicate check error: " . $e->getMessage());
-}
-
-// Insert into database
-try {
-    $pdo = getDBConnection();
-    
     $sql = "INSERT INTO registrations (name, email, phone, experience, ip_address, user_agent) 
             VALUES (:name, :email, :phone, :experience, :ip_address, :user_agent)";
     
@@ -123,6 +106,15 @@ try {
     }
     
 } catch (PDOException $e) {
+    // Duplicate email: respond as if it succeeded so the response doesn't reveal who is registered.
+    if (($e->errorInfo[1] ?? null) === 1062) {
+        echo json_encode([
+            'success' => true,
+            'message' => 'Registration successful! We will contact you soon.'
+        ]);
+        exit;
+    }
+
     error_log("Database error: " . $e->getMessage());
     http_response_code(500);
     echo json_encode([
