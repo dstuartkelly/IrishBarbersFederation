@@ -63,7 +63,7 @@ RewriteRule ^(partners|privacy)\.html$ /index.html [L]
 RewriteRule ^(join|submit-form)\.php$ /index.html [L]
 
 # Redirect join.html to join.php
-RewriteRule ^join\.html$ join.php [L,R=301]
+RewriteRule ^join\.html$ /join.php [L,R=301]
 
 # Old pages were merged into the single-page index (NE keeps the # unescaped)
 RewriteRule ^about\.html$ /#about [NE,L,R=301]
