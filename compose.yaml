@@ -1,0 +1,78 @@
+# Local copy of the live Blacknight/Plesk setup: Apache + PHP-FPM + MySQL (+ phpMyAdmin).
+#
+#   docker compose up -d --build
+#   https://localhost/            (accept the self-signed certificate warning once)
+#   http://localhost:8081/        phpMyAdmin (user: ibf, password: ibf_local_password)
+#
+# Why HTTPS: .htaccess redirects HTTP to HTTPS and the form's session cookie is Secure, so the
+# site only works properly over HTTPS, exactly as on the server.
+#
+# Ports: if 80 or 443 is already in use, copy .env.example to .env and change HTTP_PORT / HTTPS_PORT,
+# then browse to https://localhost:<HTTPS_PORT>/ directly (the HTTP redirect only works on port 80).
+#
+# Database: create_database.sql runs automatically the first time the database volume is created.
+# To start again from an empty database:  docker compose down -v
+#
+# Files for this setup (compose.yaml, Dockerfile, docker/) are blocked by .htaccess in case they are deployed.
+
+name: ibf
+
+services:
+  web:
+    build: ./docker/apache
+    ports:
+      - "${HTTP_PORT:-80}:80"
+      - "${HTTPS_PORT:-443}:443"
+    volumes:
+      # The site is the document root, as on the server. .htaccess is honoured (AllowOverride All).
+      - ./:/var/www/html:ro
+    depends_on:
+      - php
+    restart: unless-stopped
+
+  php:
+    build: ./docker/php
+    volumes:
+      - ./:/var/www/html:ro
+      # db-config.php sits above the web root, as on the server (submit-form.php looks there first).
+      # This copy holds local-only credentials; it does not use or replace your own db-config.php.
+      - ./docker/db-config.php:/var/www/db-config.php:ro
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  db:
+    image: mysql:8.0
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: ibf_local_root_password
+      MYSQL_DATABASE: ibf
+      MYSQL_USER: ibf
+      MYSQL_PASSWORD: ibf_local_password
+      TZ: Europe/Dublin
+    volumes:
+      - db-data:/var/lib/mysql
+      - ./create_database.sql:/docker-entrypoint-initdb.d/01-create_database.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+
+  phpmyadmin:
+    image: phpmyadmin:5
+    environment:
+      PMA_HOST: db
+    ports:
+      - "${PMA_PORT:-8081}:80"
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  db-data:

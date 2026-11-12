@@ -50,6 +50,8 @@ RewriteEngine On
 RewriteRule ^\.claude(/|$) - [F,L]
 RewriteRule \.md$ - [F,L]
 RewriteRule \.sql$ - [F,L]
+RewriteRule ^docker(/|$) - [F,L]
+RewriteRule ^(compose\.ya?ml|Dockerfile|\.env.*)$ - [F,L]
 
 # Redirect join.html to join.php
 RewriteRule ^join\.html$ /join.php [L,R=301]

@@ -1,4 +1,6 @@
 db-config.php
+!docker/db-config.php
+.env
 .vscode/
 
 # Saved copy of the original design (reference only)
