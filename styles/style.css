@@ -1640,6 +1640,15 @@ button {
     color: #7d2c22
 }
 
+/* Honeypot field: hidden from people, left for bots to fill */
+.hp-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+
 @media(max-width: 680px) {
     .join-grid {
         grid-template-columns: 1fr;

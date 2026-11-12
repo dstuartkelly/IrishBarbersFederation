@@ -3,26 +3,22 @@
 
 # Protect database configuration file
 <Files "db-config.php">
-    Order Allow,Deny
-    Deny from all
+    Require all denied
 </Files>
 
 # Protect CSRF token generator if accessed directly
 <Files "generate-csrf-token.php">
-    Order Allow,Deny
-    Deny from all
+    Require all denied
 </Files>
 
 # TEMPORARY: real home page, hidden until launch
 <Files "index-full.html">
-    Order Allow,Deny
-    Deny from all
+    Require all denied
 </Files>
 
 # Disallow access to og-image generator
 <Files "og-image.html">
-    Order Allow,Deny
-    Deny from all
+    Require all denied
 </Files>
 
 
@@ -37,11 +33,16 @@ Options -Indexes
 # Protect against clickjacking
 Header always append X-Frame-Options SAMEORIGIN
 
-# XSS Protection
-Header set X-XSS-Protection "1; mode=block"
-
 # Prevent MIME type sniffing
 Header set X-Content-Type-Options "nosniff"
+
+# Send only the origin to other sites, and switch off browser features the site does not use
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+
+# Content Security Policy. The pages use no inline scripts or styles; fonts come from Google Fonts.
+# If a page ever needs another external source (analytics, maps, embeds), add it here.
+Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
 
 # Redirect HTTP to HTTPS (also honours X-Forwarded-Proto in case a proxy terminates SSL)
 RewriteEngine On

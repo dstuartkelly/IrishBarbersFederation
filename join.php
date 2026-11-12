@@ -93,6 +93,11 @@
                     <div id="formMessage" class="form-message" role="status" hidden></div>
                     <?php echo csrf_field(); ?>
 
+                    <div class="hp-field" aria-hidden="true">
+                        <label for="website">Leave this field empty</label>
+                        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                    </div>
+
                     <div class="form-field">
                         <label for="name">Name *</label>
                         <input type="text" id="name" name="name" required maxlength="255" autocomplete="name">

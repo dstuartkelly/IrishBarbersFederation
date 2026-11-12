@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
             try {
                 result = JSON.parse(responseText);
             } catch (e) {
-                console.error('JSON parse error. Full response was:', responseText);
                 showMessage('error', 'Something went wrong on our side. Please try again later.');
                 return;
             }
