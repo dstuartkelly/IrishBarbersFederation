@@ -29,7 +29,8 @@ If ports 80 or 443 are already in use, copy `.env.example` to `.env`, change the
 
 | Path | Purpose |
 |---|---|
-| `*.html`, `join.php` | Pages. Each contains its own full copy of the head, nav and footer, so shared changes are made in every page |
+| `index.html` | The main single page; the nav links to its sections |
+| `news.html`, `partners.html`, `privacy.html`, `join.php` | Separate pages. Each contains its own full copy of the head, nav and footer, so shared changes are made in every page |
 | `styles/style.css` | The only stylesheet |
 | `scripts/` | `site.js` (mobile menu, footer year) and `form-handler.js` (form submission) |
 | `submit-form.php` | Handles the registration form and returns JSON |

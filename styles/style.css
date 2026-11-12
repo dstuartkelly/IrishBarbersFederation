@@ -280,26 +280,6 @@ button {
     filter: drop-shadow(0 22px 28px rgba(0,0,0,.35))
 }
 
-.art-label {
-    position: absolute;
-    font: 700 var(--fs-label) var(--display);
-    letter-spacing: 2px;
-    color: var(--lime);
-    display: flex;
-    gap: 12px;
-    align-items: center
-}
-
-.art-label b {
-    font-size: var(--fs-label);
-    color: var(--cream)
-}
-
-.label-top {
-    top: 44px;
-    right: 2%
-}
-
 .hero-bottom {
     position: absolute;
     bottom: 23px;
@@ -317,30 +297,6 @@ button {
     color: var(--lime);
     font-size: var(--fs-label);
     margin-left: 8px
-}
-
-.ticker {
-    background: var(--lime);
-    overflow: hidden;
-    height: 57px;
-    display: flex;
-    align-items: center
-}
-
-.ticker-track {
-    min-width: max-content;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    gap: 35px;
-    width: 100%;
-    font: 800 var(--fs-label) var(--display);
-    letter-spacing: 2px
-}
-
-.ticker-track i {
-    font-style: normal;
-    font-size: var(--fs-body)
 }
 
 .section {
@@ -443,7 +399,9 @@ button {
     margin: 0
 }
 
-.work-section,.policy-section,.contact-section {
+/* Only the hero, the join band and the contact block are green. Every section between them
+   alternates paper / cream (see the alternating rule at the end of this file). */
+.contact-section {
     background: var(--ink);
     color: var(--cream)
 }
@@ -473,13 +431,13 @@ button {
     margin: 0
 }
 
-.work-heading h2 em,.policy-grid h2 em,.contact-grid h2 em {
+.contact-grid h2 em {
     color: var(--lime)
 }
 
 .work-heading>p {
     max-width: 340px;
-    color: #b9c5bb;
+    color: #667269;
     font-size: var(--fs-body);
     line-height: 1.8;
     margin: 0 4% 7px 0
@@ -488,31 +446,31 @@ button {
 .work-cards {
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    border-top: 1px solid rgba(255,255,255,.24);
-    border-bottom: 1px solid rgba(255,255,255,.24)
+    border-top: 1px solid rgba(16,37,29,.22);
+    border-bottom: 1px solid rgba(16,37,29,.22)
 }
 
 .work-card {
     position: relative;
     min-height: 305px;
     padding: 26px 23px 22px;
-    border-right: 1px solid rgba(255,255,255,.2);
+    border-right: 1px solid rgba(16,37,29,.17);
     display: flex;
     flex-direction: column
 }
 
 .work-card:first-child {
-    border-left: 1px solid rgba(255,255,255,.2)
+    border-left: 1px solid rgba(16,37,29,.17)
 }
 
 .card-no {
     font: 700 var(--fs-label) var(--display);
-    color: #91a39a
+    color: #66746a
 }
 
 .card-icon {
     font-size: var(--fs-lead);
-    color: var(--lime);
+    color: #4a6615;
     margin: 29px 0 12px
 }
 
@@ -525,14 +483,14 @@ button {
 .work-card p {
     font-size: var(--fs-label);
     line-height: 1.75;
-    color: #bdc6bf;
+    color: #5f6b63;
     margin: 0 0 20px
 }
 
 .card-status {
     font: 700 var(--fs-label) var(--display);
     letter-spacing: 1.2px;
-    color: var(--lime);
+    color: #4a6615;
     margin-top: auto
 }
 
@@ -690,21 +648,21 @@ button {
 }
 
 .policy-grid .lead {
-    color: var(--cream)
+    color: var(--ink)
 }
 
 .policy-grid p:not(.lead) {
-    color: #b5c1b7
+    color: #667269
 }
 
 .policy-foot {
-    border-top: 1px solid rgba(255,255,255,.22);
+    border-top: 1px solid rgba(16,37,29,.22);
     padding-top: 19px;
     display: flex;
     justify-content: space-between;
     font: 700 var(--fs-label) var(--display);
     letter-spacing: 1.7px;
-    color: #a8b7aa
+    color: #66746a
 }
 
 .updates-head {
@@ -728,7 +686,7 @@ button {
 }
 
 .update-placeholder {
-    background: #e6e4da;
+    background: rgba(255,254,248,.55);
     border: 1px solid var(--line);
     padding: 30px;
     display: flex;
@@ -917,13 +875,16 @@ button {
 
 .campaign-stats {
     border-left: 1px solid rgba(16,37,29,.2);
-    padding-left: 8%
+    padding-left: 8%;
+    display: grid;
+    grid-template-columns: max-content 1fr
 }
 
 .campaign-stat {
     display: grid;
-    grid-template-columns: 135px 1fr;
-    gap: 15px;
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
+    gap: 0 24px;
     align-items: center;
     padding: 13px 0;
     border-bottom: 1px solid rgba(16,37,29,.17)
@@ -941,6 +902,7 @@ button {
 }
 
 .campaign-note {
+    grid-column: 1 / -1;
     font-size: var(--fs-label);
     line-height: 1.6;
     color: #747e75;
@@ -954,13 +916,6 @@ button {
         gap: 5vw
     }
 
-    .campaign-stat {
-        grid-template-columns: 110px 1fr
-    }
-
-    .campaign-stat strong {
-        font-size: var(--fs-display)
-    }
 }
 
 @media(max-width: 680px) {
@@ -979,14 +934,6 @@ button {
         border-left: 0;
         border-top: 1px solid rgba(16,37,29,.2);
         padding: 9px 0 0
-    }
-
-    .campaign-stat {
-        grid-template-columns: 125px 1fr
-    }
-
-    .campaign-stat strong {
-        font-size: var(--fs-display)
     }
 
     .site-nav {
@@ -1290,15 +1237,6 @@ button {
         font-size: var(--fs-label)
     }
 
-    .ticker {
-        height: 49px
-    }
-
-    .ticker-track {
-        gap: 23px;
-        font-size: var(--fs-label)
-    }
-
     .section {
         padding: 75px 7vw
     }
@@ -1369,11 +1307,11 @@ button {
     .work-card {
         min-height: 270px;
         padding: 19px 15px;
-        border-bottom: 1px solid rgba(255,255,255,.2)
+        border-bottom: 1px solid rgba(16,37,29,.17)
     }
 
     .work-card:nth-child(3) {
-        border-left: 1px solid rgba(255,255,255,.2)
+        border-left: 1px solid rgba(16,37,29,.17)
     }
 
     .card-icon {
@@ -1741,17 +1679,6 @@ button {
 }
 
 /* ---- Phase 1: licence, membership and extra pages ---- */
-
-.section h1.page-title {
-    font: 600 var(--fs-display)/1.04 var(--display);
-    letter-spacing: -.04em;
-    margin: 0
-}
-
-.section h1.page-title em {
-    font-style: normal;
-    color: #829f3b
-}
 
 .licence-head {
     display: grid;
@@ -2131,4 +2058,20 @@ button {
     .tier-card {
         padding: 24px 20px
     }
+}
+
+/* Alternating section backgrounds.
+   The hero, the join band and the contact block are green. Every section between them alternates
+   paper (the "Not just a membership" colour) and cream (the "One industry" colour), whatever the order. */
+:root {
+    --bg-cream: #f2f0e8;
+    --bg-paper: #e9e6dc
+}
+
+main > section:nth-child(odd):not(.hero):not(.join-band):not(.contact-section) {
+    background: var(--bg-cream)
+}
+
+main > section:nth-child(even):not(.hero):not(.join-band):not(.contact-section) {
+    background: var(--bg-paper)
 }

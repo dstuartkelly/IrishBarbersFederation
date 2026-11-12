@@ -17,59 +17,11 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Membership Page -->
-  <url>
-    <loc>https://barbersfederationofireland.com/membership.html</loc>
-    <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- IBF Licence Page -->
-  <url>
-    <loc>https://barbersfederationofireland.com/ibf-licence.html</loc>
-    <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- About Page -->
-  <url>
-    <loc>https://barbersfederationofireland.com/about.html</loc>
-    <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Standards & Education Page -->
-  <url>
-    <loc>https://barbersfederationofireland.com/standards.html</loc>
-    <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Representation Page -->
-  <url>
-    <loc>https://barbersfederationofireland.com/representation.html</loc>
-    <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
   <!-- News Page -->
   <url>
     <loc>https://barbersfederationofireland.com/news.html</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <!-- Contact Page -->
-  <url>
-    <loc>https://barbersfederationofireland.com/contact.html</loc>
-    <lastmod>2026-11-12</lastmod>
-    <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
 

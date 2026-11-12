@@ -57,5 +57,6 @@ RewriteRule ^(compose\.ya?ml|Dockerfile|\.env.*)$ - [F,L]
 RewriteRule ^join\.html$ /join.php [L,R=301]
 
 # Retired pages were merged into the home page (NE keeps the # unescaped)
+RewriteRule ^about\.html$ /#about [NE,L,R=301]
 RewriteRule ^services\.html$ /#work [NE,L,R=301]
 RewriteRule ^why\.html$ /#membership [NE,L,R=301]

@@ -74,13 +74,13 @@ if (!is_string($interest) || !in_array($interest, ['standard', 'licence', 'both'
         <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span></button>
         <nav id="site-nav" class="site-nav" aria-label="Main navigation">
             <a href="index.html">Home</a>
-            <a href="about.html">About IBF</a>
-            <a href="membership.html">Membership</a>
-            <a href="ibf-licence.html">IBF Licence</a>
-            <a href="standards.html">Standards &amp; Education</a>
-            <a href="representation.html">Representation</a>
+            <a href="index.html#about">About IBF</a>
+            <a href="index.html#membership">Membership</a>
+            <a href="index.html#licence">IBF Licence</a>
+            <a href="index.html#standards">Standards &amp; Education</a>
+            <a href="index.html#representation">Representation</a>
             <a href="news.html">News</a>
-            <a href="contact.html">Contact</a>
+            <a href="index.html#contact">Contact</a>
             <a class="nav-cta" href="join.php" aria-current="page">Register interest <span aria-hidden="true">↗</span></a>
         </nav>
     </header>
@@ -95,7 +95,7 @@ if (!is_string($interest) || !in_array($interest, ['standard', 'licence', 'both'
                     <p class="lead">Be one of the first 2,000 to help organise our industry. Register your interest in IBF 2000 and help build professional recognition, shared standards and a national voice for barbering in Ireland.</p>
                     <p>Registering your interest does not reserve a founding place.</p>
                     <p>Your details will be stored securely on our register of interest. We’ll contact you once when enrolment for IBF 2000 opens and, if you choose, send you news and updates about the Irish Barbers Federation.</p>
-                    <p>The IBF Professional Barber Licence is a voluntary credential that is still being developed. Choosing it below registers your interest only: it is not an application, and nothing is paid at this stage. <a href="ibf-licence.html">About the IBF Licence</a>.</p>
+                    <p>The IBF Professional Barber Licence is a voluntary credential that is still being developed. Choosing it below registers your interest only: it is not an application, and nothing is paid at this stage. <a href="index.html#licence">About the IBF Licence</a>.</p>
                     <div class="member-price"><div><span>STANDARD MEMBERSHIP</span><strong>€190 <small>/ year</small></strong></div><p>IBF 2000 campaign membership fee. Licensed Professional Membership: fee to be confirmed.</p></div>
                     <div class="founding-note"><span class="founding-star">✳</span><p><strong>Registering is free.</strong><br>You won’t be asked to pay anything until enrolment opens and member benefits are confirmed. Qualifying paid members among the first 2,000 are intended to receive permanent Founding Professional recognition.</p></div>
                 </div>
