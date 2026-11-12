@@ -84,7 +84,7 @@
                     <h2>2,000 barbers.<br><em>One voice.</em></h2>
                     <p class="lead">Be one of the first 2,000 to help organise our industry. Register your interest in IBF 2000 and help build professional recognition, shared standards and a national voice for barbering in Ireland.</p>
                     <p>Registering your interest does not reserve a founding place.</p>
-                    <p>Your details will be stored securely and added to our mailing list. We’ll use it to update you on developments at the Irish Barbers Federation, including when enrolment for IBF 2000 opens.</p>
+                    <p>Your details will be stored securely on our register of interest. We’ll contact you once when enrolment for IBF 2000 opens and, if you choose, send you news and updates about the Irish Barbers Federation.</p>
                     <div class="member-price"><div><span>PROFESSIONAL MEMBERSHIP</span><strong>€190 <small>/ year</small></strong></div><p>IBF 2000 campaign membership fee</p></div>
                     <div class="founding-note"><span class="founding-star">✳</span><p><strong>Registering is free.</strong><br>You won’t be asked to pay anything until enrolment opens and member benefits are confirmed. Qualifying paid members among the first 2,000 are intended to receive permanent Founding Professional recognition.</p></div>
                 </div>
@@ -115,8 +115,17 @@
                         <input type="number" id="experience" name="experience" min="0" max="100">
                     </div>
 
+                    <div class="form-check">
+                        <input type="checkbox" id="consent_register" name="consent_register" value="1" required>
+                        <label for="consent_register">I agree to the IBF storing my details on the IBF 2000 register of interest, and contacting me once when enrolment opens, as described in the <a href="privacy.html">Privacy Notice</a>. *</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="consent_marketing" name="consent_marketing" value="1">
+                        <label for="consent_marketing">I’d also like to receive news and updates about the IBF and IBF 2000 by email. (Optional)</label>
+                    </div>
+
                     <button type="submit" class="button button-lime" id="submitBtn">Register your interest <span aria-hidden="true">↗</span></button>
-                    <p class="small-note">By submitting this form you consent to the IBF storing your details and emailing you updates, as described in our <a href="privacy.html">Privacy Notice</a>. You can withdraw your consent at any time. Eligibility and confirmed member benefits will be published before enrolment opens.</p>
+                    <p class="small-note">You can withdraw your consent at any time by emailing <a href="mailto:info@barbersfederationofireland.com">info@barbersfederationofireland.com</a>. Eligibility and confirmed member benefits will be published before enrolment opens.</p>
                 </form>
             </div>
         </section>

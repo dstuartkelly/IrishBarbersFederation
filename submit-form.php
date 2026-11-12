@@ -78,6 +78,10 @@ $email = strtolower(post_string('email'));
 $phone = post_string('phone');
 $experienceRaw = post_string('experience');
 
+// Consent: the register box is required, the updates box is optional
+$consentRegister = post_string('consent_register') === '1';
+$consentMarketing = post_string('consent_marketing') === '1';
+
 $errors = [];
 $controlChars = '/[\x00-\x1F\x7F]/';
 
@@ -103,6 +107,10 @@ if ($phone !== '') {
     } elseif (!preg_match('/^[0-9+().\- ]{6,50}$/', $phone)) {
         $errors[] = 'Invalid phone number';
     }
+}
+
+if (!$consentRegister) {
+    $errors[] = 'Please tick the box to agree to us storing your details';
 }
 
 // An empty experience field is stored as NULL, not 0
@@ -148,8 +156,10 @@ try {
 
     // Insert into database. The UNIQUE index on registrations.email rejects duplicates atomically (error 1062).
     $stmt = $pdo->prepare(
-        'INSERT INTO registrations (name, email, phone, experience, ip_address, user_agent)
-         VALUES (:name, :email, :phone, :experience, :ip_address, :user_agent)'
+        'INSERT INTO registrations
+            (name, email, phone, experience, ip_address, user_agent, consent_register, consent_marketing, consent_at)
+         VALUES
+            (:name, :email, :phone, :experience, :ip_address, :user_agent, :consent_register, :consent_marketing, NOW())'
     );
     $stmt->execute([
         ':name' => $name,
@@ -158,6 +168,8 @@ try {
         ':experience' => $experience,
         ':ip_address' => $ipAddress,
         ':user_agent' => $userAgent,
+        ':consent_register' => 1,
+        ':consent_marketing' => $consentMarketing ? 1 : 0,
     ]);
 
     respond(200, true, SUCCESS_MESSAGE);

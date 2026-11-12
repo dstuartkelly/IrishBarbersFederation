@@ -54,6 +54,7 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteEngine On
 RewriteRule ^\.claude(/|$) - [F,L]
 RewriteRule \.md$ - [F,L]
+RewriteRule \.sql$ - [F,L]
 
 # TEMPORARY: LAUNCH-WEEK HOLDING PAGE.
 # index.html is the "Launching soon" page (keeps the live <head> so search results are unaffected).
