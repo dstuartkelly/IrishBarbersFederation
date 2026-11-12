@@ -13,7 +13,10 @@ session_set_cookie_params([
 session_start();
 
 // Include database configuration
-require_once 'db-config.php';
+// Prefer the copy above the web root (production); fall back to the repo root (local development)
+require_once file_exists(__DIR__ . '/../db-config.php')
+    ? __DIR__ . '/../db-config.php'
+    : __DIR__ . '/db-config.php';
 
 // Set JSON header for response
 header('Content-Type: application/json');
