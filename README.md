@@ -1,6 +1,6 @@
 # Irish Barbers Federation website
 
-Website for the Irish Barbers Federation (IBF), live at https://barbersfederationofireland.com. A development copy is at https://dstuartkelly.github.io/IrishBarbersFederation.
+Website for the Irish Barbers Federation (IBF), live at https://irishbarbersfederation.ie. A development copy is at https://dstuartkelly.github.io/IrishBarbersFederation.
 
 It is a static HTML, CSS and JavaScript site with one PHP-backed registration form. There is no build step or package manager. Files are deployed as-is to an Apache + PHP + MySQL host managed through Plesk.
 

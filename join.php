@@ -21,23 +21,23 @@ if (!is_string($interest) || !in_array($interest, ['standard', 'licence', 'both'
     <meta name="keywords" content="join irish barbers federation, IBF 2000, barber membership ireland, register barber ireland, founding professional member">
     <meta name="author" content="Irish Barbers Federation">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://barbersfederationofireland.com/join.php">
+    <link rel="canonical" href="https://irishbarbersfederation.ie/join.php">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://barbersfederationofireland.com/join.php">
+    <meta property="og:url" content="https://irishbarbersfederation.ie/join.php">
     <meta property="og:title" content="Register your interest | Irish Barbers Federation">
     <meta property="og:description" content="2,000 barbers. One voice. Register your interest and be one of the first 2,000 founding members of IBF 2000.">
-    <meta property="og:image" content="https://barbersfederationofireland.com/images/og-image.png">
+    <meta property="og:image" content="https://irishbarbersfederation.ie/images/og-image.png">
     <meta property="og:locale" content="en_IE">
     <meta property="og:site_name" content="Irish Barbers Federation">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://barbersfederationofireland.com/join.php">
+    <meta property="twitter:url" content="https://irishbarbersfederation.ie/join.php">
     <meta property="twitter:title" content="Register your interest | Irish Barbers Federation">
     <meta property="twitter:description" content="2,000 barbers. One voice. Register your interest and be one of the first 2,000 founding members of IBF 2000.">
-    <meta property="twitter:image" content="https://barbersfederationofireland.com/images/og-image.png">
+    <meta property="twitter:image" content="https://irishbarbersfederation.ie/images/og-image.png">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
@@ -54,11 +54,11 @@ if (!is_string($interest) || !in_array($interest, ['standard', 'licence', 'both'
         "@type": "Organization",
         "name": "Irish Barbers Federation",
         "alternateName": ["IBF", "Barbers Federation of Ireland"],
-        "url": "https://barbersfederationofireland.com",
-        "logo": "https://barbersfederationofireland.com/images/logo.png",
+        "url": "https://irishbarbersfederation.ie",
+        "logo": "https://irishbarbersfederation.ie/images/logo.png",
         "contactPoint": {
         "@type": "ContactPoint",
-        "email": "info@barbersfederationofireland.com",
+        "email": "info@irishbarbersfederation.ie",
         "contactType": "customer service"
         }
     }
@@ -152,7 +152,7 @@ if (!is_string($interest) || !in_array($interest, ['standard', 'licence', 'both'
                     </div>
 
                     <button type="submit" class="button button-lime" id="submitBtn">Register your interest <span aria-hidden="true">↗</span></button>
-                    <p class="small-note">You can withdraw your consent at any time by emailing <a href="mailto:info@barbersfederationofireland.com">info@barbersfederationofireland.com</a>. Eligibility and confirmed member benefits will be published before enrolment opens.</p>
+                    <p class="small-note">You can withdraw your consent at any time by emailing <a href="mailto:info@irishbarbersfederation.ie">info@irishbarbersfederation.ie</a>. Eligibility and confirmed member benefits will be published before enrolment opens.</p>
                 </form>
             </div>
         </section>
