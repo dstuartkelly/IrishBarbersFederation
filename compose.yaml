@@ -1,4 +1,4 @@
-# Local copy of the live Blacknight/Plesk setup: Apache + PHP-FPM + MySQL (+ phpMyAdmin).
+# Local copy of the live Blacknight/Plesk setup: Apache + PHP-FPM + MariaDB (+ phpMyAdmin).
 #
 #   docker compose up -d --build
 #   https://localhost/            (accept the self-signed certificate warning once)
@@ -43,7 +43,7 @@ services:
     restart: unless-stopped
 
   db:
-    image: mysql:8.0
+    image: mariadb:10.11
     command:
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci
@@ -57,7 +57,7 @@ services:
       - db-data:/var/lib/mysql
       - ./create_database.sql:/docker-entrypoint-initdb.d/01-create_database.sql:ro
     healthcheck:
-      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p$$MYSQL_ROOT_PASSWORD --silent"]
+      test: ["CMD-SHELL", "mariadb-admin ping -h 127.0.0.1 -uroot -p$$MYSQL_ROOT_PASSWORD --silent"]
       interval: 5s
       timeout: 5s
       retries: 20

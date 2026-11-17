@@ -2,11 +2,11 @@
 
 Website for the Irish Barbers Federation (IBF), live at https://irishbarbersfederation.ie. A development copy is at https://dstuartkelly.github.io/IrishBarbersFederation.
 
-It is a static HTML, CSS and JavaScript site with one PHP-backed registration form. There is no build step or package manager. Files are deployed as-is to an Apache + PHP + MySQL host managed through Plesk.
+It is a static HTML, CSS and JavaScript site with one PHP-backed registration form. There is no build step or package manager. Files are deployed as-is to an Apache + PHP + MariaDB host managed through Plesk.
 
 ## Run it locally
 
-You need Docker with Compose. The setup mirrors the live server: Apache (reading `.htaccess`), PHP 8.5-FPM and MySQL 8.0, plus phpMyAdmin.
+You need Docker with Compose. The setup mirrors the live server: Apache (reading `.htaccess`), PHP 8.5-FPM and MariaDB 10.11, plus phpMyAdmin.
 
 ```bash
 docker compose up -d --build
@@ -50,6 +50,11 @@ If ports 80 or 443 are already in use, copy `.env.example` to `.env`, change the
 
 ## Deployment
 
-Work happens on the `development` branch and is merged into `main`. The repository is deployed as-is to the Plesk host.
+Work happens on the `development` branch and is merged into `main`. Both branches deploy automatically and the repository is deployed as-is:
+
+- `development` deploys to the GitHub Pages development site.
+- `main` deploys to the Plesk host, which serves https://irishbarbersfederation.ie. The domains barbersfederationofireland.com, barbersfederationofireland.ie and irishbarberingfederation.ie are aliases that redirect to it.
+
+Anything merged to `main` is live straight away. If the database schema changed, update the live database first.
 
 The development site on GitHub Pages is static only: PHP does not run there, so `join.php` and the registration form do not work, and `.htaccess` is ignored. Use the Docker setup to test those.
