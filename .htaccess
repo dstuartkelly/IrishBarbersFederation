@@ -44,6 +44,13 @@ Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), 
 # If a page ever needs another external source (analytics, maps, embeds), add it here.
 Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
 
+# Send the alternative domains (and their www forms) to the primary domain with a 301.
+# Done first so http://alias goes straight to https://irishbarbersfederation.ie in one hop.
+# Plesk alias redirects may do the same; the two do not conflict. Only these hosts match, so the primary cannot loop.
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^(www\.)?(barbersfederationofireland\.(com|ie)|irishbarberingfederation\.ie)$ [NC]
+RewriteRule ^(.*)$ https://irishbarbersfederation.ie/$1 [L,R=301]
+
 # Redirect HTTP to HTTPS (also honours X-Forwarded-Proto in case a proxy terminates SSL)
 RewriteEngine On
 RewriteCond %{HTTPS} off

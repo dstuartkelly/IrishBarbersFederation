@@ -3,7 +3,7 @@
   
   <!-- Home Page -->
   <url>
-    <loc>https://barbersfederationofireland.com/</loc>
+    <loc>https://irishbarbersfederation.ie/</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
   
   <!-- Join Page -->
   <url>
-    <loc>https://barbersfederationofireland.com/join.php</loc>
+    <loc>https://irishbarbersfederation.ie/join.php</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -19,7 +19,7 @@
   
   <!-- Partners Page -->
   <url>
-    <loc>https://barbersfederationofireland.com/partners.html</loc>
+    <loc>https://irishbarbersfederation.ie/partners.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -27,7 +27,7 @@
 
   <!-- Privacy Page -->
   <url>
-    <loc>https://barbersfederationofireland.com/privacy.html</loc>
+    <loc>https://irishbarbersfederation.ie/privacy.html</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
