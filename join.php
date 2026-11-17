@@ -17,8 +17,8 @@ if (!is_string($interest) || !in_array($interest, ['standard', 'licence', 'both'
     <!-- Primary Meta Tags -->
     <title>Register your interest | Irish Barbers Federation</title>
     <meta name="title" content="Register your interest | Irish Barbers Federation">
-    <meta name="description" content="2,000 barbers. One voice. Register your interest in IBF 2000 and be one of the first 2,000 founding professional members of the Irish Barbers Federation.">
-    <meta name="keywords" content="join irish barbers federation, IBF 2000, barber membership ireland, register barber ireland, founding professional member">
+    <meta name="description" content="2,000 barbers. One voice. Register your interest in IBF 2000 and be one of the first 2,000 founding members of the Irish Barbers Federation.">
+    <meta name="keywords" content="join irish barbers federation, IBF 2000, barber membership ireland, register barber ireland, founding member">
     <meta name="author" content="Irish Barbers Federation">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://irishbarbersfederation.ie/join.php">
@@ -80,6 +80,7 @@ if (!is_string($interest) || !in_array($interest, ['standard', 'licence', 'both'
             <a href="index.html#standards">Standards &amp; Education</a>
             <a href="index.html#representation">Representation</a>
             <a href="news.html">News</a>
+            <a href="partners.html">Partners</a>
             <a href="index.html#contact">Contact</a>
             <a class="nav-cta" href="join.php" aria-current="page">Register interest <span aria-hidden="true">↗</span></a>
         </nav>
@@ -96,8 +97,8 @@ if (!is_string($interest) || !in_array($interest, ['standard', 'licence', 'both'
                     <p>Registering your interest does not reserve a founding place.</p>
                     <p>Your details will be stored securely on our register of interest. We’ll contact you once when enrolment for IBF 2000 opens and, if you choose, send you news and updates about the Irish Barbers Federation.</p>
                     <p>The IBF Professional Barber Licence is a voluntary credential that is still being developed. Choosing it below registers your interest only: it is not an application, and nothing is paid at this stage. <a href="index.html#licence">About the IBF Licence</a>.</p>
-                    <div class="member-price"><div><span>STANDARD MEMBERSHIP</span><strong>€190 <small>/ year</small></strong></div><p>IBF 2000 campaign membership fee. Licensed Professional Membership: fee to be confirmed.</p></div>
-                    <div class="founding-note"><span class="founding-star">✳</span><p><strong>Registering is free.</strong><br>You won’t be asked to pay anything until enrolment opens and member benefits are confirmed. Qualifying paid members among the first 2,000 are intended to receive permanent Founding Professional recognition.</p></div>
+                    <div class="member-price"><div><span>STANDARD MEMBERSHIP</span><strong>€190 <small>/ year</small></strong></div><p>IBF 2000 campaign membership fee. Licensed Professional Membership: €249 per year.</p></div>
+                    <div class="founding-note"><span class="founding-star">✳</span><p><strong>Registering is free.</strong><br>You won’t be asked to pay anything until enrolment opens and member benefits are confirmed. Licensed Professional Members among the first 2,000 qualifying paid members are intended to receive permanent Founding Professional recognition.</p></div>
                 </div>
 
                 <form id="userForm" class="join-form" action="submit-form.php" method="POST">
